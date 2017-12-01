@@ -1,159 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Shrijit Singh - Developer</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale-1.0" />
+		<meta name="author"	content="Shrijit Singh" />
 		<meta name="description" content="Shrijit Singh - Developer" />
+
+		<link rel="stylesheet" href="css/foundation.css" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<script src="js/modernizr.custom.js"></script>
-    <style>
-      .bb-item{
-        margin: auto;
-        position: relative;
-      }
-    </style>
+
 	</head>
 	<body>
-		<div class="container" style="height: 80%; width: 80%; margin: auto;">
-			<div class="bb-custom-wrapper">
-
-				<div id="bb-bookblock" class="bb-bookblock">
-					<div class="bb-item" style="width: 100%; margin: auto;">
-							<center>
-
-            <h1>BookBlock <span>A Content  Plugin</span></h1>  </center>
-
+		<section class="main">
+			<div class="container">
+				<div class="book">
+					<div id="front-page" class="front-page">
+						<center>
+							<h1>Shrijit Singh</h1>
+							<h2>Aspiring Software Developer & Researcher</h2>
+						</center>
+						<h2>I Live In</h2>
+						<h3>India</h3>
+						<h2>I Enjoy</h2>
+						<h3>Solving Problems</h3>
+						<h2>I Like</h2>
+						<h3>Watching Movies</h3>
+						<input type="button" value="Open" onclick="clickedOpenBook()" />
 					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							<p>Soufflé tootsie roll jelly beans. Sweet icing croissant dessert bear claw. Brownie dessert cheesecake danish jelly pudding bear claw soufflé.</p>
-						</div>
-						<div class="bb-custom-side">
-							<p>Candy canes lollipop macaroon marshmallow gummi bears tiramisu. Dessert croissant cupcake candy canes. Bear claw faworki faworki lemon drops. Faworki marzipan sugar plum jelly-o marzipan jelly-o.</p>
-						</div>
+					<div id="second-page" class="second-page">
+						<h1>:)</h1>
 					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							<p>Croissant pudding gingerbread gummi bears marshmallow halvah. Wafer donut croissant. Cookie muffin jelly beans pie croissant croissant candy canes jelly marshmallow.</p>
-						</div>
-						<div class="bb-custom-side">
-							<p>Wafer donut caramels chocolate caramels sweet roll. Gummi bears powder candy chocolate cake gummi bears icing wafer cupcake. Brownie cotton candy pastry chocolate wypas.</p>
-						</div>
+					<div class="portfolio">
+						<h1>Portfolio</h1>
 					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							<p>Marzipan dragée candy canes chocolate cake. Soufflé faworki jelly gingerbread cupcake. Powder gummies applicake.</p>
-						</div>
-						<div class="bb-custom-side">
-							<p>Cotton candy caramels tootsie roll soufflé powder lemon drops carrot cake danish. Cotton candy candy canes fruitcake muffin gingerbread. Jujubes soufflé gingerbread donut donut.</p>
-						</div>
+					<div id="history" class="history right">
+						<h1>This is my history</h1>
 					</div>
-					<div class="bb-item">
-						<div class="bb-custom-side">
-							<p>Jujubes fruitcake tiramisu liquorice chocolate cake. Carrot cake faworki donut soufflé oat cake tootsie roll. Fruitcake fruitcake cake sweet pie jelly beans. Chocolate cake candy jujubes oat cake toffee croissant muffin.</p>
-						</div>
-						<div class="bb-custom-side">
-							<p>Chocolate bar tiramisu marzipan. Croissant soufflé croissant lollipop liquorice dragée chupa chups carrot cake. Liquorice lollipop halvah toffee lollipop.</p>
-						</div>
+					<div id="contact" class="contact left">
+						<h1>Contact Me</h1>
 					</div>
 				</div>
-
-				<nav style="width: 80%; margin: auto;">
-					<a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a>
-					<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">Previous</a>
-					<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">Next</a>
-					<a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a>
-				</nav>
-
 			</div>
-
-		</div><!-- /container -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="js/jquerypp.custom.js"></script>
-		<script src="js/jquery.bookblock.js"></script>
-		<script>
-			var Page = (function() {
-
-				var config = {
-						$bookBlock : $( '#bb-bookblock' ),
-						$navNext : $( '#bb-nav-next' ),
-						$navPrev : $( '#bb-nav-prev' ),
-						$navFirst : $( '#bb-nav-first' ),
-						$navLast : $( '#bb-nav-last' )
-					},
-					init = function() {
-						config.$bookBlock.bookblock( {
-							speed : 1000,
-							shadowSides : 0.8,
-							shadowFlip : 0.4
-						} );
-						initEvents();
-					},
-					initEvents = function() {
-
-						var $slides = config.$bookBlock.children();
-
-						// add navigation events
-						config.$navNext.on( 'click touchstart', function() {
-							config.$bookBlock.bookblock( 'next' );
-							return false;
-						} );
-
-						config.$navPrev.on( 'click touchstart', function() {
-							config.$bookBlock.bookblock( 'prev' );
-							return false;
-						} );
-
-						config.$navFirst.on( 'click touchstart', function() {
-							config.$bookBlock.bookblock( 'first' );
-							return false;
-						} );
-
-						config.$navLast.on( 'click touchstart', function() {
-							config.$bookBlock.bookblock( 'last' );
-							return false;
-						} );
-
-						// // add swipe events
-						// $slides.on( {
-						// 	'swipeleft' : function( event ) {
-						// 		config.$bookBlock.bookblock( 'next' );
-						// 		return false;
-						// 	},
-						// 	'swiperight' : function( event ) {
-						// 		config.$bookBlock.bookblock( 'prev' );
-						// 		return false;
-						// 	}
-						// } );
-
-						// // add keyboard events
-						// $( document ).keydown( function(e) {
-						// 	var keyCode = e.keyCode || e.which,
-						// 		arrow = {
-						// 			left : 37,
-						// 			up : 38,
-						// 			right : 39,
-						// 			down : 40
-						// 		};
-            //
-						// 	switch (keyCode) {
-						// 		case arrow.left:
-						// 			config.$bookBlock.bookblock( 'prev' );
-						// 			break;
-						// 		case arrow.right:
-						// 			config.$bookBlock.bookblock( 'next' );
-						// 			break;
-						// 	}
-						// } );
-					};
-
-					return { init : init };
-
-			})();
-		</script>
-		<script>
-				Page.init();
-		</script>
+		</section>
 	</body>
+	<script src="js/vendor/jquery.js"></script>
+<script src="js/vendor/what-input.js"></script>
+<script src="js/vendor/foundation.min.js"></script>
+<script>
+	$(document).foundation();
+</script>
+	<script>
+	function clickedOpenBook(){
+		var n = 1;
+		timer = setInterval(openBook, 1)
+		function openBook(){
+			if(n <= 270){
+				if(n < 180){
+					document.getElementById('front-page').style.transform = "rotateY("+(-n)+"deg)";
+					document.getElementById('front-page').style.transformOrigin = "0";
+				}
+				if(n > 90 && n < 180){
+					document.getElementById('history').style.transform = "rotateY("+(-n-180)+"deg)";
+					document.getElementById('history').style.transformOrigin = "100%";
+				}
+				if (n > 90 && n < 270) {
+					document.getElementById('second-page').style.transform = "rotateY("+(n-90)+"deg)";
+					document.getElementById('second-page').style.transformOrigin = "100%";
+				}
+				if(n > 180){
+					document.getElementById('contact').style.transform = "rotateY("+(n-270)+"deg)";
+					document.getElementById('contact').style.transformOrigin = "0";
+				}
+				++n;
+			}
+			else{
+				clearInterval(timer);
+			}
+		}
+	}
+	</script>
 </html>
