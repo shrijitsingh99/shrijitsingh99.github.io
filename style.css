@@ -232,10 +232,10 @@ html, body{
 .timeline::before {
   background: #fefefe;
   content: '';
-  height: 100%;
-  left: 50%;
+  height: 90%;
+  left: 14px;
   position: absolute;
-  top: 0;
+  top: 10px;
   width: 3px;
 }
 
@@ -265,13 +265,13 @@ html, body{
 .timeline .timeline-item .timeline-icon {
   background: #fefefe;
   border-radius: 50%;
-  height: 50px;
-  left: 50%;
+  height: 25px;
+  left: 15px;
   margin-left: -23px;
   overflow: hidden;
   position: absolute;
-  top: 0;
-  width: 50px;
+  top: 6px;
+  width: 25px;
 }
 
 .timeline .timeline-item .timeline-icon img,
@@ -286,10 +286,10 @@ html, body{
 }
 
 .timeline .timeline-item .timeline-content {
-  padding: 20px;
-  text-align: right;
+  padding: 0px 0px 0px 30px;
+  text-align: left;
   transition: all 0.25s ease-in;
-  width: 45%;
+  width: 100%;
   background: transparent;
 }
 
@@ -324,7 +324,7 @@ html, body{
   .timeline {
     margin: 30px;
     padding: 0;
-    width: 90%;
+    width: 80%;
   }
   .timeline::before {
     left: 0;
