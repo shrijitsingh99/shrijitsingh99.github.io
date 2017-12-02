@@ -18,6 +18,9 @@
 	</head>
 	<body>
 		<section class="main">
+			<div id="large-header-1" class="large-header-1">
+					<canvas id="demo-canvas-1"></canvas>
+			</div>
 			<div class="container">
 				<div id="large-header" class="large-header">
 						<canvas id="demo-canvas"></canvas>
@@ -52,6 +55,7 @@
 						<img style="position: absolute; left:25%;" src="qrcode.jpg">
 					</div>
 					<div class="portfolio">
+
 						<h1 class="type-sidelines" style="margin-left: 40px; margin-right: 40px;"><span>Portfolio</span></h1>
 					</div>
 					<div data-simplebar id="history" class="history right-content">
@@ -76,7 +80,10 @@
 
 					</div>
 					<div id="contact" class="contact left-content">
-						<a onclick="clickedCloseBook()"><i class="fa fa-close fa-3x fa-inverse" style="position: absolute; right: 10px; top: 0; z-index: 5;"></i></a>
+						<div id="large-header-1" class="large-header-1">
+								<canvas style="z-index: 3;"id="demo-canvas-1"></canvas>
+						</div>
+						<a style="z-index: 5;" onclick="clickedCloseBook()"><i class="fa fa-close fa-3x fa-inverse" style="position: absolute; right: 10px; top: 0; z-index: 5;"></i></a>
 						<h1 class="type-sidelines" style="margin-left: 40px; margin-right: 40px;"><span>Contact Me</span></h1>
 					</div>
 				</div>
@@ -91,6 +98,7 @@
 <script src="js/EasePack.min.js"></script>
 <script src="js/rAF.js"></script>
 <script src="js/demo-3.js"></script>
+<script src="js/demo-1.js"></script>
 
 <script>
 // var canvas = document.getElementsByTagName('canvas')[0];
