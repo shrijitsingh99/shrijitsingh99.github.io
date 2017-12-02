@@ -29,8 +29,7 @@ html, body{
 }
 
 .front-page{
-	background-image: url('background1.jpg');
-	background-size: 100% 100%;
+
 
 }
 
@@ -45,10 +44,7 @@ html, body{
 	/*visibility: hidden;*/
 }
 
-.second-page{
-		z-index: 2;
-		background-color: blue;
-}
+
 
 .portfolio{
 	background-color: pink;
@@ -104,19 +100,22 @@ html, body{
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
+.main{
+	background-image: url('http://themes.pixelwars.org/bookcard/images/bckg/body-bg/linen.png');
+}
 
 .front-page > center >  h1{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: bolder;
 	font-size: 4rem;
-	text-shadow: 0px 1px 1px #000;
-	color: white;
+	text-shadow: 1px 0px 0px #000;
+	color: rgb(240, 240, 240);
 }
 .front-page > center >  h4{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: light;
-	text-shadow: 0px 1px 1px #000;
-	color: white;
+	color: rgb(240, 240, 240);
+	text-shadow: 1px 0px 0px #000;
 }
 
 .front-page >  h4{
@@ -125,16 +124,20 @@ html, body{
 	margin-top: -0.5rem;
 	margin-bottom: 2.5rem;
 	margin-left: 1.5rem;
-	text-shadow: 0px 1px 1px #000;
-	color: white;
+	color: rgb(240, 240, 240);
+	text-shadow: 1px 0px 0px #000;
+	position: relative;
+	text-align: left;
 
 }
 .front-page >  h2{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-weight: bolder;
 	margin-left: 1.5rem;
-	text-shadow: 0px 1px 1px #000;
-	color: white;
+	color: rgb(240, 240, 240);
+	text-shadow: 1px 0px 0px #000;
+	text-align: left;
+	position: relative;
 
 }
 
@@ -347,7 +350,7 @@ html, body{
 
 /*History*/
 
-.history, .portfolio, .contact{
+.history, .portfolio, .contact, .second-page{
 	background-color: #1b1717;
 	padding: 20px 30px 20px 30px;
 	border: 1px solid #000;
@@ -392,4 +395,9 @@ html, body{
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+}
+
+.second-page{
+		z-index: 2;
+		background-color: rgb(26, 26, 26);
 }
