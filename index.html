@@ -26,7 +26,7 @@
 					<div id="front-page" class="front-page">
 
 						<center>
-							<h1>Shrijit Singh</h1>
+							<h1 style="margin-bottom: 0; margin-top: 30px">Shrijit Singh</h1>
 							<h4 class=""><span>Aspiring Software Developer & Researcher</span></h4>
 						</center>
 						<hr style="width: 80%; left: 0; position: relative;" />
@@ -109,9 +109,13 @@ canvas.width = divWidth;
 			if(n <= 270){
 				if(n < 180){
 					document.getElementById('front-page').style.transform = "rotateY("+(-n)+"deg)";
+					document.getElementById('large-header').style.transform = "rotateY("+(-n)+"deg)";
 					document.getElementById('front-page').style.transformOrigin = "0";
+					document.getElementById('large-header').style.transformOrigin = "0";
+
 				}
 				if(n > 90 && n < 180){
+					document.getElementById('large-header').style.visibility = "hidden";
 					document.getElementById('history').style.transform = "rotateY("+(-n-180)+"deg)";
 					document.getElementById('history').style.transformOrigin = "100%";
 				}
@@ -139,7 +143,9 @@ canvas.width = divWidth;
 			if(n <= 270){
 				if(n <= 180){
 					document.getElementById('front-page').style.transform = "rotateY("+(-n)+"deg)";
+					document.getElementById('large-header').style.transform = "rotateY("+(-n)+"deg)";
 					document.getElementById('front-page').style.transformOrigin = "0";
+					document.getElementById('large-header').style.transformOrigin = "0";
 				}
 				if(n >= 90 && n < 180){
 					document.getElementById('history').style.transform = "rotateY("+(-n-180)+"deg)";
@@ -155,6 +161,9 @@ canvas.width = divWidth;
 				}
 				if(n == 0){
 					clearInterval(timer);
+				}
+				if(n<=90){
+					document.getElementById('large-header').style.visibility = "visible";
 				}
 				--n;
 

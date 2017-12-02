@@ -10,4 +10,5 @@
 	top: 140px;
 	z-index: 3;
 	border-radius: 20px;
+	backface-visibility: hidden;
 }
