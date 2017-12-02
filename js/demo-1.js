@@ -22,8 +22,8 @@
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/15) {
-            for(var y = 0; y < height; y = y + height/15) {
+        for(var x = 0; x < width; x = x + width/20) {
+            for(var y = 0; y < height; y = y + height/20) {
                 var px = x + Math.random()*width/20;
                 var py = y + Math.random()*height/20;
                 var p = {x: px, originX: px, y: py, originY: py };
@@ -108,9 +108,9 @@
     // animation
     function initAnimation() {
         animate();
-        for(var i in points) {
-            shiftPoint(points[i]);
-        }
+        // for(var i in points) {
+        //     shiftPoint(points[i]);
+        // }
     }
 
     function animate() {
@@ -139,13 +139,13 @@
         requestAnimationFrame(animate);
     }
 
-    function shiftPoint(p) {
-        TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
-            y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
-            onComplete: function() {
-                shiftPoint(p);
-            }});
-    }
+    // function shiftPoint(p) {
+    //     TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
+    //         y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+    //         onComplete: function() {
+    //             shiftPoint(p);
+    //         }});
+    // }
 
     // Canvas manipulation
     function drawLines(p) {
