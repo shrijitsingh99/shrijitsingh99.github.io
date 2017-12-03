@@ -73,7 +73,7 @@
 		<img src="https://placeimg.com/350/350/tech" alt="" />
 	</div>
 	<div class="column column-block filter-simple-item web">
-		<img src="https://placeimg.com/350/350/tech" alt="" />
+		<img src="https://placeimg.com/350/350/nature" alt="" />
 	</div>
 </div>
 </section>
@@ -103,13 +103,44 @@
 
 					</div>
 					<div id="contact" class="contact left-content">
-						<div id="large-header-1" class="large-header-1">
-						</div>
-						<a id="closeBook" style="z-index: 5;" onclick="clickedCloseBook()"><i class="fa fa-close fa-3x fa-inverse" style="position: absolute; right: 10px; top: 0; z-index: 5;"></i></a>
+
+						<a id="closeBook" style="z-index: 5;" onclick="clickedCloseBook()"><i class="fa fa-close fa-3x fa-inverse" style="position: fixed; right: 10px; top: 0; z-index: 1;"></i></a>
 						<h1 class="type-sidelines" style="margin-left: 40px; margin-right: 40px;"><span>Contact Me</span></h1>
 						<img src="profile.jpg" style="border-radius: 100px; width: 200px; justify-content: center; margin-top: 0px;"></img>
 								<h2 style="font-family: 'Sacramento', cursive; margin-top:20px;font-size: 65px;">Shrijit Singh</h2>
 								<h3 style="font-size: 22px;">shrijitsingh99@gmail.com</h3>
+
+								<form action="" style="margin-top: 40px;">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="form-floating-label">
+        <input type="text" id="name" name="name" required>
+        <label for="name">Name</label>
+      </div>
+    </div>
+    <div class="small-12 column">
+      <div class="form-floating-label">
+        <input type="text" id="email" name="email">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="small-12 column">
+      <div class="form-floating-label">
+        <input type="tel" id="tel" name="tel">
+        <label for="tel">Subject</label>
+      </div>
+    </div>
+    <div class="small-12 column">
+      <div class="form-floating-label">
+        <textarea name="" id="" rows="3" placeholder=""></textarea>
+        <label for="textarea">Message</label>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
 					</div>
 				</div>
 			</div>
@@ -129,9 +160,9 @@
 // var canvas = document.getElementsByTagName('canvas')[0];
 // var divHeight = document.getElementById('front-page').clientHeight;
 // var divWidth = document.getElementById('front-page').clientWidth;
-
-canvas.height = divHeight;
-canvas.width = divWidth;
+//
+// canvas.height = divHeight;
+// canvas.width = divWidth;
 	$(document).foundation();
 </script>
 	<script>
@@ -221,6 +252,16 @@ $('.filter-simple-button').click(function () {
   $(this).addClass('is-active');
 });
 
+
+$('.form-floating-label input, .form-floating-label textarea').focusin(function(){
+  $(this).parent().addClass('has-value');
+});
+
+$('.form-floating-label input, .form-floating-label textarea').blur(function(){
+  if(!$(this).val().length > 0) {
+    $(this).parent().removeClass('has-value');
+  }
+});
 
 
 
