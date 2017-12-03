@@ -43,7 +43,7 @@ var animateCoverBackgroundFunction;
 
     function tweenTriangle(tri) {
         var t = Math.random()*(2*Math.PI);
-        var x = (200+Math.random()*100)*Math.cos(t) + width*0.5;
+        var x = (200+Math.random()*100)*Math.cos(t) + width*0.45;
         var y = (200+Math.random()*100)*Math.sin(t) + height*0.5-20;
         var time = 4+3*Math.random();
 
