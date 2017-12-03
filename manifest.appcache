@@ -11,9 +11,12 @@ images/profile.jpg
 
 
 #style sheets
+css/component.css
+css/demo.css
 css/font-awesome.min.css
 css/foundation.min.css
 css/normalize.css
+css/simplebar.css
 css/style.css
 
 #style sheet images
