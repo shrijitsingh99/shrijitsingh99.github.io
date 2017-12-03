@@ -1,13 +1,115 @@
-function validEmail(e){var t=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
-return t.test(e)}function validateHuman(e){return e?!0:void 0}function getFormData(){var e=document.getElementById("gform"),t=e.elements,n=Object.keys(t).map(function(e){return void 0!==t[e].name?t[e].name:t[e].length>0?t[e].item(0).name:void 0}).filter(function(e,t,n){return n.indexOf(e)==t&&e}),o={}
-return n.forEach(function(e){o[e]=t[e].value
-var n=""
-if("checkbox"===t[e].type)n=n+t[e].checked+", ",o[e]=n.slice(0,-2)
-else if(t[e].length)for(var a=0;a<t[e].length;a++)t[e].item(a).checked&&(n=n+t[e].item(a).value+", ",o[e]=n.slice(0,-2))}),o.formDataNameOrder=JSON.stringify(n),o.formGoogleSheetName=e.dataset.sheet||"responses",o.formGoogleSendEmail=e.dataset.email||"",o}function handleFormSubmit(e){e.preventDefault()
-var t=getFormData()
-if(!validEmail(t.email))return document.getElementById("email-invalid").style.display="block",!1
-var n=e.target.action,o=new XMLHttpRequest
-o.open("POST",n),o.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),o.onreadystatechange=function(){console.log(o.status,o.statusText),console.log(o.responseText),document.getElementById("gform").reset()}
-var a=Object.keys(t).map(function(e){return encodeURIComponent(e)+"="+encodeURIComponent(t[e])}).join("&")
-o.send(a),alert("Your message has been sent."),document.getElementById("name").value="",document.getElementById("email").value="",document.getElementById("subject").value="",document.getElementById("message").value="",document.getElementById("name").focus(),document.getElementById("name").blur(),document.getElementById("email").focus(),document.getElementById("email").blur(),document.getElementById("subject").focus(),document.getElementById("subject").blur(),document.getElementById("message").focus(),document.getElementById("message").blur()}function loaded(){var e=document.getElementById("gform")
-e.addEventListener("submit",handleFormSubmit,!1)}document.addEventListener("DOMContentLoaded",loaded,!1)
+
+function validEmail(email) { // see:
+  var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+  return re.test(email);
+}
+
+function validateHuman(honeypot) {
+  if (honeypot) {  //if hidden form filled up
+    // console.log("Robot Detected!");
+    return true;
+  } else {
+    // console.log("Welcome Human!");
+  }
+}
+
+// get all data in form and return object
+function getFormData() {
+  var form = document.getElementById("gform");
+  var elements = form.elements; // all form elements
+  var fields = Object.keys(elements).map(function(k) {
+    if(elements[k].name !== undefined) {
+      return elements[k].name;
+    // special case for Edge's html collection
+    }else if(elements[k].length > 0){
+      return elements[k].item(0).name;
+    }
+  }).filter(function(item, pos, self) {
+    return self.indexOf(item) == pos && item;
+  });
+  var data = {};
+  fields.forEach(function(k){
+    data[k] = elements[k].value;
+    var str = ""; // declare empty string outside of loop to allow
+                  // it to be appended to for each item in the loop
+    if(elements[k].type === "checkbox"){ // special case for Edge's html collection
+      str = str + elements[k].checked + ", "; // take the string and append
+                                              // the current checked value to
+                                              // the end of it, along with
+                                              // a comma and a space
+      data[k] = str.slice(0, -2); // remove the last comma and space
+                                  // from the  string to make the output
+                                  // prettier in the spreadsheet
+    }else if(elements[k].length){
+      for(var i = 0; i < elements[k].length; i++){
+        if(elements[k].item(i).checked){
+          str = str + elements[k].item(i).value + ", "; // same as above
+          data[k] = str.slice(0, -2);
+        }
+      }
+    }
+  });
+
+  // add form-specific values into the data
+  data.formDataNameOrder = JSON.stringify(fields);
+  data.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
+  data.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+  // console.log(data);
+  return data;
+}
+
+function handleFormSubmit(event) {  // handles form submit withtout any jquery
+  event.preventDefault();           // we are submitting via xhr below
+  var data = getFormData();         // get the values submitted in the form
+
+  /* OPTION: Remove this comment to enable SPAM prevention, see README.md
+  if (validateHuman(data.honeypot)) {  //if form is filled, form will not be submitted
+    return false;
+  }
+  */
+
+  if( !validEmail(data.email) ) {   // if email is not valid show error
+    document.getElementById('email-invalid').style.display = 'block';
+    return false;
+  } else {
+    var url = event.target.action;  //
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url);
+    // xhr.withCredentials = true;
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function() {
+        console.log( xhr.status, xhr.statusText )
+        console.log(xhr.responseText);
+        // document.getElementById('gform').style.display = 'none'; // hide form
+        // document.getElementById('thankyou_message').style.display = 'block';
+        document.getElementById('gform').reset();
+        return;
+    };
+    // url encode form data for sending as post data
+    var encoded = Object.keys(data).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
+    xhr.send(encoded);
+    alert("Your message has been sent.");
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('subject').value = "";
+    document.getElementById('message').value = "";
+    document.getElementById('name').focus();
+    document.getElementById('name').blur();
+    document.getElementById('email').focus();
+    document.getElementById('email').blur();
+    document.getElementById('subject').focus();
+    document.getElementById('subject').blur();
+    document.getElementById('message').focus();
+    document.getElementById('message').blur();
+  }
+}
+function loaded() {
+  // console.log('contact form submission handler loaded successfully');
+  // bind to the submit event of our form
+  var form = document.getElementById('gform');
+  form.addEventListener("submit", handleFormSubmit, false);
+};
+document.addEventListener('DOMContentLoaded', loaded, false);
