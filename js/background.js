@@ -1,3 +1,5 @@
+var animateBackground;
+var animateBackgroundFunction;
 (function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
@@ -113,9 +115,9 @@
         }
     }
 
-    var animationFunc;
 
-    function animate() {
+
+ function animate() {
         if(animateHeader) {
             ctx.clearRect(0,0,width,height);
             for(var i in points) {
@@ -140,12 +142,13 @@
         }
 
         /* No animation or dynamic content due to poor performance */
-        animationFunc = requestAnimationFrame(animate);
+        animateBackground = requestAnimationFrame(animate);
 
     }
+    animateBackgroundFunction = animate.bind(null);
 
     $("#openBook").on("click", function() {
-cancelAnimationFrame(animationFunc);
+cancelAnimationFrame(animateBackground);
 for(var i in points) {
     // detect points in range
     if(Math.abs(getDistance(target, points[i])) < 4000) {
@@ -169,7 +172,7 @@ for(var i in points) {
 
 $("#closeBook").on("click", function() {
   setTimeout(function(){
-  animationFunc = requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
  for(var i in points) {
  // detect points in range
  if(Math.abs(getDistance(target, points[i])) < 4000) {

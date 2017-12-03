@@ -1,5 +1,6 @@
-
-
+var animateCoverBackground;
+var animateCoverBackgroundFunction;
+(function() {
     var width, height, coverBackground, canvas, ctx, triangles, target, animateHeader = true;
     var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
 
@@ -80,8 +81,10 @@
                 triangles[i].draw();
             }
         }
-        requestAnimationFrame(animate);
+        animateCoverBackground = requestAnimationFrame(animate);
     }
+
+    animateCoverBackgroundFunction = animate.bind(null);
 
     // Canvas manipulation
     function Triangle() {
@@ -121,3 +124,4 @@
         };
         this.init = init;
     }
+})();
