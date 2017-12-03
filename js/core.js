@@ -2,6 +2,7 @@
 
 function clickedOpenBook() {
     var n = 1;
+    cancelAnimationFrame(animateCoverBackground)
     timer = setInterval(openBook, 1)
     function openBook() {
         if (n <= 270) {
@@ -13,7 +14,6 @@ function clickedOpenBook() {
             }
             if (n > 90 && n < 180) {
                 document.getElementById('cover-background').style.display = "none";
-                cancelAnimationFrame(animateCoverBackground)
                 document.getElementById('resume').style.transform = "rotateY(" + (-n - 180) + "deg)";
                 document.getElementById('resume').style.transformOrigin = "100%";
             }
@@ -60,11 +60,12 @@ function clickedCloseBook() {
             }
             if (n == 0) {
                 clearInterval(timer);
-                requestAnimationFrame(animateCoverBackgroundFunction);
             }
             --n;
         }
     }
+    requestAnimationFrame(animateCoverBackgroundFunction);
+
 }
 
 /*Portfolio*/
