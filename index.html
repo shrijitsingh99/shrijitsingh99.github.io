@@ -27,7 +27,7 @@
           </canvas>
             </div>
             <div class="book">
-                <div id="front-page" class="front-page">
+                <div id="cover" class="cover">
                     <center>
                         <h1 style="margin-bottom: 0; margin-top: 30px">Shrijit Singh</h1>
                         <h4>
@@ -44,7 +44,7 @@
                     <h2>My Motto</h2>
                     <h4>If you can believe it, you can achieve it</h4>
                     <div class="footer-social-icons">
-                        <h4 class="_14">Follow me on</h4>
+                        <h4 style="font-size: 1.4em;">Follow me on</h4>
                         <ul class="social-icons">
                           <li>
                             <a href="https://github.com/shrijitsingh99" class="social-icon">
@@ -79,19 +79,16 @@
                         </ul>
                     </div>
                     <a id="openBook" onclick="clickedOpenBook()">
-              				<span class="fa-stack fa-2x openButton" style="color: white;">
+              				<span class="fa-stack fa-2x" style="position: absolute; top: 50%; right: 5px;color: white;">
                 				<i class="fa fa-circle-thin fa-stack-2x"></i>
                 				<i class="fa fa-angle-right fa-stack-1x"></i>
               				</span>
             				</a>
                 </div>
-                <div id="second-page" class="second-page">
-                    <h1 style="font-family: 'Sacramento', cursive;margin-top: 300px; font-size: 60px;">Made with
-                    </h1>
-                    <i style="margin-top: -50px;" class="fa fa-heart fa-5x"></i>
-                    </h3>
-                    <h2 style="font-family: 'Sacramento', cursive; margin-top:20px;font-size: 70px;">By Shrijit Singh
-                    </h2>
+                <div id="hidden-cover" class="hidden-cover">
+                    <h1 style="font-family: 'Sacramento', cursive;margin-top: 300px; font-size: 60px;">Made with</h1>
+                    <i style="margin-top: -30px; color: red;" class="fa fa-heart fa-5x"></i>
+                    <h2 style="font-family: 'Sacramento', cursive; margin-top:20px;font-size: 70px;">By Shrijit Singh</h2>
                 </div>
                 <div class="portfolio">
                     <h1 class="type-sidelines" style="margin-left: 40px; margin-right: 40px;">
@@ -117,7 +114,7 @@
                         </div>
                     </section>
                 </div>
-                <div data-simplebar id="history" class="history right-content">
+                <div data-simplebar id="resume" class="resume right-page">
                     <h1 class="type-sidelines" style="margin-left: 40px; margin-right: 40px;">
                         <span>Resume</span>
                     </h1>
@@ -150,7 +147,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="contact" class="contact left-content">
+                <div id="contact" class="contact left-page">
                     <a id="closeBook" style="z-index: 5;" onclick="clickedCloseBook()">
       								<i class="fa fa-close fa-3x fa-inverse" style="position: fixed; right: 10px; top: 0; z-index: 1;"></i>
     								</a>

@@ -9,8 +9,8 @@
     initAnimation();
 
     function initHeader() {
-        width = document.getElementById('front-page').clientWidth;
-        height = document.getElementById('front-page').clientHeight;
+        width = document.getElementById('cover').clientWidth;
+        height = document.getElementById('cover').clientHeight;
         target = {x: 0, y: height};
 
         largeHeader = document.getElementById('large-header');
@@ -66,8 +66,8 @@
     }
 
     function resize() {
-        width = document.getElementById('front-page').clientWidth;
-        height = document.getElementById('front-page').clientHeight;
+        width = document.getElementById('cover').clientWidth;
+        height = document.getElementById('cover').clientHeight;
         largeHeader.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;

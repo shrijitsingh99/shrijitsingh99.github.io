@@ -1,3 +1,5 @@
+/*Fonts*/
+
 /* latin-ext */
 
 @font-face {
@@ -16,133 +18,119 @@
     src: local('Sacramento'), local('Sacramento-Regular'), url('../fonts/WFDkXpubrEwopJnSlHV6CPk_vArhqVIZ0nv9q090hN8.woff2') format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+
+
 html,
 body {
     width: 100%;
     height: 100%;
     padding: 0;
 }
+h1,
+h2,
+h3,
+h4 {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-shadow: 1px 0px 0px #000;
+    color: white;
+}
 .main {
     width: 100%;
     height: 100%;
     padding: 0;
     position: fixed;
+		background-image: url('../images/background.png');
 }
 .container {
+		position: relative;
+		margin: 0 auto;
     width: 26%;
     min-width: 600px;
     height: 100%;
-    /*background-color: red;*/
-
-    position: relative;
-    ;
-    margin: 0 auto;
 }
 .book {
     position: absolute;
-    /*Add support for more screen heights*/
-
     top: 140px;
     bottom: 140px;
     width: 100%;
     height: auto;
-    /*background-color: yellow;*/
-
     border-radius: 10px;
 }
-.front-page {} .front-page,
-.second-page {
-    /*background-color: green;*/
 
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 3;
-    backface-visibility: hidden;
-    /*visibility: hidden;*/
-}
-.portfolio {
-    background-color: pink;
-}
-.history {
-    transform: rotateY(-90deg);
-    transform-origin: "100%";
-}
-.contact {
-    background-color: orange;
-    transform: rotateY(90deg);
-    transform-origin: "0";
-}
-.history,
+/*Book Pages*/
+
+.cover,
+.hidden-cover,
 .portfolio,
+.resume,
 .contact {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+  border-radius: 20px;
+	backface-visibility: hidden;
 }
-.contact {
-    z-index: 1;
-    background-color: orange;
+.resume,
+.portfolio,
+.contact
+ {
+    background-color: #1b1717;
+    padding: 20px 30px 20px 30px;
 }
-.left-content {
+.left-page {
     position: absolute;
     left: 100%;
 }
-.right-content {
+.right-page {
     position: absolute;
     right: 100%;
 }
-.front-page,
-.second-page,
-.portfolio,
-.history,
+
+.cover{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+.resume {
+	z-index: 1;
+    transform: rotateY(-90deg);
+    transform-origin: "100%";
+}
+.portfolio {
+	z-index: 1;
+}
 .contact {
-    border-radius: 20px;
+	z-index: 1;
+	transform: rotateY(90deg);
+	transform-origin: "0";
 }
-.updates {
-    width: 100%;
-    height: 50px;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    background-color: red;
-    -webkit-backdrop-filter: blur(10px);
-    /* Safari 9+ */
+.hidden-cover {
+		z-index: 2;
+		background-color: #1d1d1d;
+}
 
-    backdrop-filter: blur(10px);
-    /* Chrome and Opera */
+/*Cover*/
 
-    background-color: rgba(0, 0, 0, 0.3);
-}
-.main {
-    background-image: url('../images/background.png');
-}
-.front-page > center > h1 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+.cover > center > h1 {
     font-weight: bolder;
     font-size: 4rem;
-    text-shadow: 1px 0px 0px #000;
     color: rgb(240, 240, 240);
 }
-.front-page > center > h4 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+.cover > center > h4 {
     font-weight: light;
     color: rgb(240, 240, 240);
-    text-shadow: 1px 0px 0px #000;
 }
-.front-page > h4 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+.cover > h4 {
     font-weight: Light;
     margin-top: -0.5rem;
     margin-bottom: 2.5rem;
     margin-left: 1.5rem;
     color: rgb(240, 240, 240);
-    text-shadow: 1px 0px 0px #000;
     position: relative;
     text-align: left;
 }
-.front-page > h2 {
+.cover > h2 {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-weight: bolder;
     margin-left: 1.5rem;
@@ -151,11 +139,46 @@ body {
     text-align: left;
     position: relative;
 }
-.openButton {
-    position: absolute;
-    top: 50%;
-    right: 5px;
+
+/*Resume*/
+
+.resume > h1 {
+    font-weight: bolder;
 }
+.resume > h3 {
+    font-weight: lighter;
+}
+.header-border {
+    width: inherit;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 5px 10px 0 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/*Scrollbar*/
+
+.simplebar-scrollbar {
+    background: rgb(46, 45, 45);
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*Page Curl and Book Shadow*/
+
+.resume {
+    box-shadow: inset -62px 2px 70px -40px rgba(0, 0, 0, 0.2), -10px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.portfolio {
+    box-shadow: inset -62px 0px 70px -40px rgba(0, 0, 0, 0.2), inset 62px 0px 70px -40px rgba(0, 0, 0, 0.2);
+}
+.contact {
+    box-shadow: inset 62px 0px 70px -40px rgba(0, 0, 0, 0.2), 10px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
 /* Sidelines Text Divider*/
 
 .type-sidelines {
@@ -186,36 +209,48 @@ body {
 .type-sidelines span:after {
     left: 100%;
 }
-.custom {
-    display: block;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
+
+/*Portfolio Filter*/
+
+.filter-simple .button-group {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
-.custom span {
+.filter-simple {
+    height: 850px;
+    overflow: auto;
+}
+.filter-simple-item {
     display: inline-block;
-    position: relative;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 30%;
 }
-.custom span:before,
-.custom span:after {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    border-top-style: dotted;
-    border-top-width: 4px;
-    border-top-color: #fff;
-    margin-top: -2px;
+.filter-simple .filter-simple-button.hollow.is-active,
+.filter-simple .filter-simple-button.hollow:focus,
+.filter-simple .filter-simple-button.hollow:active {
+    background-color: #ffffff;
+    color: #000;
 }
-.custom span:before {
-    right: 100%;
+.button-group.round:first-child {
+    border-radius: 5px 0 0 5px;
 }
-.custom span:after {
-    left: 100%;
+.button-group.round:last-child {
+    border-radius: 0 5px 5px 0;
 }
+.button.hollow {
+    border: 1px solid #fff;
+    color: white;
+}
+.button.hollow:hover {
+    border: 0px solid rgba(0, 0, 0, 1);
+    color: black;
+    background-color: white;
+}
+.button-group .button {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
 /*Timeline*/
 
 .timeline .timeline-item::after,
@@ -334,104 +369,8 @@ body {
         left: 0;
     }
 }
-/*History*/
 
-.history,
-.portfolio,
-.contact,
-.second-page {
-    background-color: #1b1717;
-    padding: 20px 30px 20px 30px;
-    border: 1px solid #131313;
-    color: white;
-}
-.simplebar-scrollbar {
-    background: rgb(46, 45, 45);
-}
-::-webkit-scrollbar {
-    display: none;
-}
-.history {
-    box-shadow: inset -62px 2px 70px -40px rgba(0, 0, 0, 0.2), -10px 0px 10px 0px rgba(0, 0, 0, 0.3);
-}
-.portfolio {
-    box-shadow: inset -62px 0px 70px -40px rgba(0, 0, 0, 0.2), inset 62px 0px 70px -40px rgba(0, 0, 0, 0.2);
-}
-.contact {
-    box-shadow: inset 62px 0px 70px -40px rgba(0, 0, 0, 0.2), 10px 0px 10px 0px rgba(0, 0, 0, 0.3);
-}
-h1,
-h2,
-h3,
-h4 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    text-shadow: 0px 1px 1px #000;
-    color: white;
-}
-.history > h1 {
-    font-weight: bolder;
-}
-.history > h3 {
-    font-weight: lighter;
-    ;
-}
-.header-border {
-    width: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
-    padding: 5px 10px 0 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.second-page {
-    z-index: 2;
-    background-color: rgb(26, 26, 26);
-}
-/*Portfolio*/
-
-.filter-simple .button-group {
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-.filter-simple {
-    height: 850px;
-    overflow: auto;
-}
-.filter-simple-item {
-    display: inline-block;
-    width: 30%;
-}
-.filter-simple .filter-simple-button.hollow.is-active,
-.filter-simple .filter-simple-button.hollow:focus,
-.filter-simple .filter-simple-button.hollow:active {
-    background-color: #ffffff;
-    color: #000;
-}
-.button-group.round:first-child {
-    border-radius: 5px 0 0 5px;
-}
-.button-group.round:last-child {
-    border-radius: 0 5px 5px 0;
-}
-.column-block {
-    /*margin-bottom: 30px;*/
-}
-.button.hollow {
-    border: 1px solid #fff;
-    color: white;
-}
-.button.hollow:hover {
-    border: 0px solid rgba(0, 0, 0, 1);
-    color: black;
-    background-color: white;
-}
-.button-group .button {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-/*Contact*/
+/*Contact Form*/
 
 .form-floating-label {
     position: relative;
@@ -488,57 +427,42 @@ h4 {
     color: black;
     font-weight: 400;
 }
-@import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
-body {
-    font-family: 'Lato', sans-serif;
-    color: #FFF;
-    background: #322f30;
-    -webkit-font-smoothing: antialiased;
+
+/* Submit Button*/
+
+.submit-button {
+		margin-top: 19px;
+    padding: 9px 10px 9px 10px;
+		width: 100%;
+		border: 2px solid white;
+    border-radius: 5px;
+		font-size: 30px;
+		background-color: transparent;
+    color: white;
 }
-a {
-    text-decoration: none;
-    color: #fff;
+.submit-button:hover {
+    background-color: white;
+    color: black;
 }
-p > a:hover {
-    color: #d9d9d9;
-    text-decoration: underline;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 1% 0 1% 0;
-}
-._12 {
-    font-size: 1.2em;
-}
-._14 {
-    font-size: 1.4em;
-}
-ul {
-    padding: 0;
-    list-style: none;
-}
+
+/*Social Media Icons*/
+
 .footer-social-icons {
     position: absolute;
+		margin: -100px 0 0 -150px;
     width: 300px;
     height: 200px;
-    z-index: 15;
     bottom: -100px;
     left: 50%;
-    margin: -100px 0 0 -150px;
-}
-.social-icon {
-    color: #fff;
 }
 .fa {
     border-radius: 20px;
 }
+.fa:hover {
+    color: white;
+}
 ul.social-icons {
-    margin-top: 10px;
+    margin-top: 12px;
 }
 .social-icons li {
     vertical-align: top;
@@ -620,26 +544,4 @@ ul.social-icons {
 }
 .fa-google-plus:hover {
     background-color: #d34836;
-}
-.fa:hover {
-    color: white;
-}
-/*Heart*/
-
-.fa-heart {
-    color: red;
-}
-.submit-button {
-    width: 100%;
-    font-size: 30px;
-    padding: 9px 10px 9px 10px;
-    border-radius: 5px;
-    margin-top: 19px;
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-}
-.submit-button:hover {
-    background-color: white;
-    color: black;
 }
