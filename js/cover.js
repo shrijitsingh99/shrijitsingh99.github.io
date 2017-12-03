@@ -1,6 +1,6 @@
 
 
-    var width, height, largeHeader, canvas, ctx, triangles, target, animateHeader = true;
+    var width, height, coverBackground, canvas, ctx, triangles, target, animateHeader = true;
     var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
 
     // Main
@@ -13,10 +13,10 @@
         height = document.getElementById('cover').clientHeight;
         target = {x: 0, y: height};
 
-        largeHeader = document.getElementById('large-header');
-        largeHeader.style.height = height+'px';
+        coverBackground = document.getElementById('cover-background');
+        coverBackground.style.height = height+'px';
 
-        canvas = document.getElementById('demo-canvas');
+        canvas = document.getElementById('cover-canvas');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
@@ -68,7 +68,7 @@
     function resize() {
         width = document.getElementById('cover').clientWidth;
         height = document.getElementById('cover').clientHeight;
-        largeHeader.style.height = height+'px';
+        coverBackground.style.height = height+'px';
         canvas.width = width;
         canvas.height = height;
     }

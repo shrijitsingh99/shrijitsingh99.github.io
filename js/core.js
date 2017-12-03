@@ -7,12 +7,12 @@ function clickedOpenBook() {
         if (n <= 270) {
             if (n < 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
-                document.getElementById('large-header').style.transform = "rotateY(" + (-n) + "deg)";
+                document.getElementById('cover-background').style.transform = "rotateY(" + (-n) + "deg)";
                 document.getElementById('cover').style.transformOrigin = "0";
-                document.getElementById('large-header').style.transformOrigin = "0";
+                document.getElementById('cover-background').style.transformOrigin = "0";
             }
             if (n > 90 && n < 180) {
-                document.getElementById('large-header').style.display = "none";
+                document.getElementById('cover-background').style.display = "none";
                 document.getElementById('resume').style.transform = "rotateY(" + (-n - 180) + "deg)";
                 document.getElementById('resume').style.transformOrigin = "100%";
             }
@@ -38,9 +38,9 @@ function clickedCloseBook() {
         if (n <= 270) {
             if (n <= 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
-                document.getElementById('large-header').style.transform = "rotateY(" + (-n) + "deg)";
+                document.getElementById('cover-background').style.transform = "rotateY(" + (-n) + "deg)";
                 document.getElementById('cover').style.transformOrigin = "0";
-                document.getElementById('large-header').style.transformOrigin = "0";
+                document.getElementById('cover-background').style.transformOrigin = "0";
             }
             if (n >= 90 && n < 180) {
                 document.getElementById('resume').style.transform = "rotateY(" + (-n - 180) + "deg)";
@@ -58,7 +58,7 @@ function clickedCloseBook() {
                 clearInterval(timer);
             }
             if (n <= 90) {
-                document.getElementById('large-header').style.display = "inherit";
+                document.getElementById('cover-background').style.display = "inherit";
             }
             --n;
         }

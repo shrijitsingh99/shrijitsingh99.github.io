@@ -12,10 +12,10 @@
       height = window.innerHeight;
         target = {x: width/2, y: height/2};
 
-        largeHeader = document.getElementById('large-header-1');
+        largeHeader = document.getElementById('background');
         largeHeader.style.height = height+'px';
 
-        canvas = document.getElementById('demo-canvas-1');
+        canvas = document.getElementById('background-canvas');
         canvas.width = width;
         canvas.height = height;
         ctx = canvas.getContext('2d');
@@ -100,11 +100,10 @@
     }
 
     function resize() {
-        width = window.innerWidth;
-        height = window.innerHeight;
         largeHeader.style.height = height+'px';
-        document.canvas.width = width;
-        document.canvas.height = height;
+        document.canvas = document.getElementById('background-canvas');
+        document.canvas.width = window.innerWidth;
+        document.canvas.height = window.innerHeight;
     }
     // animation
     function initAnimation() {
