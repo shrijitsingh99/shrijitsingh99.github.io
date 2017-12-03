@@ -5,36 +5,36 @@ CACHE MANIFEST
 CACHE:
 
 #images
-images/profile.jpg
+http://shrijitsingh.com/images/profile.jpg
 
 #internal HTML documents
 
 
 #style sheets
-css/component.css
-css/demo.css
-css/font-awesome.min.css
-css/foundation.min.css
-css/normalize.css
-css/simplebar.css
-css/style.css
+http://shrijitsingh.com/css/component.css
+http://shrijitsingh.com/css/demo.css
+http://shrijitsingh.com/css/font-awesome.min.css
+http://shrijitsingh.com/css/foundation.min.css
+http://shrijitsingh.com/css/normalize.css
+http://shrijitsingh.com/css/simplebar.css
+http://shrijitsingh.com/css/style.css
 
 #style sheet images
 "../images/background.png"
 "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28138, 138, 138%29'></polygon></svg>"
 
 #javascript files
-js/vendor/jquery.min.js
-js/vendor/what-input.js
-js/vendor/foundation.min.js
-js/simplebar.js
-js/TweenLite.min.js
-js/EasePack.min.js
-js/rAF.js
-js/background.js
-js/cover.js
-js/form-submission-handler.js
-js/core.js
+http://shrijitsingh.com/js/vendor/jquery.min.js
+http://shrijitsingh.com/js/vendor/what-input.js
+http://shrijitsingh.com/js/vendor/foundation.min.js
+http://shrijitsingh.com/js/simplebar.js
+http://shrijitsingh.com/js/TweenLite.min.js
+http://shrijitsingh.com/js/EasePack.min.js
+http://shrijitsingh.com/js/rAF.js
+http://shrijitsingh.com/js/background.js
+http://shrijitsingh.com/js/cover.js
+http://shrijitsingh.com/js/form-submission-handler.js
+http://shrijitsingh.com/js/core.js
 
 NETWORK:
 *
