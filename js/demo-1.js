@@ -8,8 +8,8 @@
     addListeners();
 
     function initHeader() {
-      width = document.getElementById('large-header-1').clientWidth;
-      height = document.getElementById('large-header-1').clientHeight;
+      width = window.innerWidth;
+      height = window.innerHeight;
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('large-header-1');
@@ -81,8 +81,10 @@
         var posx = posy = 0;
         var offset = $("#large-header-1").offset()
         if (e.pageX || e.pageY) {
-            posx = e.pageX - offset.left;
-            posy = e.pageY - offset.top;
+          // posx = e.pageX - offset.left;
+          // posy = e.pageY - offset.top;
+          posx = e.pageX;
+          posy = e.pageY;
         }
         else if (e.clientX || e.clientY)    {
             posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
@@ -98,13 +100,12 @@
     }
 
     function resize() {
-      width = document.getElementById('large-header-1').clientWidth;
-      height = document.getElementById('large-header-1').clientHeight;
+        width = window.innerWidth;
+        height = window.innerHeight;
         largeHeader.style.height = height+'px';
-        canvas.width = width;
-        canvas.height = height;
+        document.canvas.width = width;
+        document.canvas.height = height;
     }
-
     // animation
     function initAnimation() {
         animate();
@@ -113,23 +114,25 @@
         }
     }
 
+    var animationFunc;
+
     function animate() {
         if(animateHeader) {
             ctx.clearRect(0,0,width,height);
             for(var i in points) {
                 // detect points in range
                 if(Math.abs(getDistance(target, points[i])) < 4000) {
-                    points[i].active = 0.6;
-                    points[i].circle.active = 0.6;
-                } else if(Math.abs(getDistance(target, points[i])) < 20000) {
-                    points[i].active = 0.1;
-                    points[i].circle.active = 0.3;
-                } else if(Math.abs(getDistance(target, points[i])) < 40000) {
-                    points[i].active = 0.02;
-                    points[i].circle.active = 0.1;
-                } else {
                     points[i].active = 1;
                     points[i].circle.active = 1;
+                } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+                    points[i].active = 1;
+                    points[i].circle.active = 1;
+                } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+                    points[i].active = 1;
+                    points[i].circle.active = 1;
+                } else {
+                    points[i].active = 0.2;
+                    points[i].circle.active = 0.4;
                 }
 
                 drawLines(points[i]);
@@ -138,9 +141,57 @@
         }
 
         /* No animation or dynamic content due to poor performance */
-        // requestAnimationFrame(animate);
+        animationFunc = requestAnimationFrame(animate);
 
     }
+
+    $("#openBook").on("click", function() {
+cancelAnimationFrame(animationFunc);
+for(var i in points) {
+    // detect points in range
+    if(Math.abs(getDistance(target, points[i])) < 4000) {
+        points[i].active = 1;
+        points[i].circle.active = 1;
+    } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+        points[i].active = 1;
+        points[i].circle.active = 1;
+    } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+        points[i].active = 1;
+        points[i].circle.active = 1;
+    } else {
+        points[i].active = 0.3;
+        points[i].circle.active = 1;
+    }
+
+    drawLines(points[i]);
+    points[i].circle.draw();
+}
+});
+
+$("#closeBook").on("click", function() {
+  setTimeout(function(){
+  animationFunc = requestAnimationFrame(animate);
+ for(var i in points) {
+ // detect points in range
+ if(Math.abs(getDistance(target, points[i])) < 4000) {
+     points[i].active = 1;
+     points[i].circle.active = 1;
+ } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+     points[i].active = 1;
+     points[i].circle.active = 1;
+ } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+     points[i].active = 1;
+     points[i].circle.active = 1;
+ } else {
+     points[i].active = 0.2;
+     points[i].circle.active = 0.4;
+ }
+
+ drawLines(points[i]);
+ points[i].circle.draw();
+ }
+}, 1200);
+});
 
     function shiftPoint(p) {
         TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,

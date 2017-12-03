@@ -1,4 +1,4 @@
-(function() {
+
 
     var width, height, largeHeader, canvas, ctx, triangles, target, animateHeader = true;
     var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
@@ -119,8 +119,5 @@
             ctx.fillStyle = 'rgba('+_this.color+','+ _this.alpha+')';
             ctx.fill();
         };
-
         this.init = init;
     }
-
-})();
