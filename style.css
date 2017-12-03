@@ -356,7 +356,7 @@ html, body{
 .history, .portfolio, .contact, .second-page{
 	background-color: #1b1717;
 	padding: 20px 30px 20px 30px;
-	border: 1px solid #0f0f0f;
+	border: 1px solid #131313;
 	color: white;
 }
 .simplebar-scrollbar{
@@ -403,4 +403,53 @@ html, body{
 .second-page{
 		z-index: 2;
 		background-color: rgb(26, 26, 26);
+}
+
+
+/*Portfolio*/
+
+
+.filter-simple .button-group {
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter-simple{
+	height: 850px;
+	overflow: auto;
+}
+
+.filter-simple-item{
+	display: inline-block;
+	width: 30%;
+}
+
+.filter-simple .filter-simple-button.hollow.is-active, .filter-simple .filter-simple-button.hollow:focus, .filter-simple .filter-simple-button.hollow:active {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.button-group.round :first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.button-group.round :last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.column-block {
+  /*margin-bottom: 30px;*/
+}
+
+.button.hollow{
+		border: 1px solid #fff;
+		color: white;
+
+}
+.button.hollow:hover{
+		border: 0px solid rgba(0, 0, 0, 1);
+		color: black;
+		background-color: white;
+
 }
