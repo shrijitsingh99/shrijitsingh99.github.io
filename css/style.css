@@ -105,6 +105,7 @@ h4 {
 	z-index: 1;
 	transform: rotateY(90deg);
 	transform-origin: "0";
+	text-align: center;
 }
 .hidden-cover {
 		z-index: 2;
