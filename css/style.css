@@ -45,8 +45,7 @@ h4 {
 .container {
 		position: relative;
 		margin: 0 auto;
-    width: 26%;
-    min-width: 600px;
+    width: 700px;
     height: 100%;
 		display: inline-block;
 }
@@ -568,7 +567,7 @@ ul.social-icons {
 }
 
 .cover-background {
-	position: absolute;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	background: #1d1d1d;
