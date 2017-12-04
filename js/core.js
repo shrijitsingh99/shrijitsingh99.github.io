@@ -13,7 +13,7 @@ function clickedOpenBook() {
                 document.getElementById('cover-background').style.transformOrigin = "0";
             }
             if (n > 90 && n < 180) {
-                document.getElementById('cover-background').style.display = "none";
+                document.getElementById('cover-background').style.visibility = "hidden";
                 document.getElementById('resume').style.transform = "rotateY(" + (-n - 180) + "deg)";
                 document.getElementById('resume').style.transformOrigin = "100%";
             }
@@ -56,7 +56,7 @@ function clickedCloseBook() {
                 document.getElementById('contact').style.transformOrigin = "0";
             }
             if (n <= 90) {
-                document.getElementById('cover-background').style.display = "inherit";
+                document.getElementById('cover-background').style.visibility = "visible";
             }
             if (n == 0) {
                 clearInterval(timer);
