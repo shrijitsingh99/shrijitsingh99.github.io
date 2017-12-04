@@ -24,7 +24,7 @@ var animateBackgroundFunction;
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/30) {
+        for(var x = 0; x < width; x = x + width/40) {
             for(var y = 0; y < height; y = y + height/30) {
                 var px = x + Math.random()*width/20;
                 var py = y + Math.random()*height/20;
@@ -41,7 +41,7 @@ var animateBackgroundFunction;
                 var p2 = points[j]
                 if(!(p1 == p2)) {
                     var placed = false;
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < 3; k++) {
                         if(!placed) {
                             if(closest[k] == undefined) {
                                 closest[k] = p2;
@@ -50,7 +50,7 @@ var animateBackgroundFunction;
                         }
                     }
 
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < 3; k++) {
                         if(!placed) {
                             if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
                                 closest[k] = p2;
