@@ -623,7 +623,7 @@ hr{
 
 @media only screen and (max-width: 1500px) {
   .container {
-      width: 350px;
+      width: 325px;
       height: 100%;
   }
   .book {
