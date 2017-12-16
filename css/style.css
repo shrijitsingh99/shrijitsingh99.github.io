@@ -29,7 +29,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     text-shadow: 1px 0px 0px #000;
     color: white;
@@ -122,35 +124,7 @@ h4 {
 
 /*Cover*/
 
-.cover > center > h1 {
-    margin-bottom: 0;
-    margin-top: 30px;
-    font-weight: bolder;
-    font-size: 4rem;
-    color: rgb(240, 240, 240);
-}
-.cover > center > h4 {
-    font-weight: light;
-    color: rgb(240, 240, 240);
-}
-.cover > h4 {
-    font-weight: Light;
-    margin-top: -0.5rem;
-    margin-bottom: 2.5rem;
-    margin-left: 1.5rem;
-    color: rgb(240, 240, 240);
-    position: relative;
-    text-align: left;
-}
-.cover > h2 {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: bolder;
-    margin-left: 1.5rem;
-    color: rgb(240, 240, 240);
-    text-shadow: 1px 0px 0px #000;
-    text-align: left;
-    position: relative;
-}
+
 
 /*Resume*/
 
@@ -162,7 +136,7 @@ h4 {
 }
 .header-border {
     width: inherit;
-    border: 2px solid rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 1);
     border-radius: 10px;
     padding: 5px 10px 0 10px;
     margin-left: auto;
@@ -304,7 +278,7 @@ h4 {
     transition: all 0.25s ease-in;
 }
 .timeline .timeline-item {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     position: relative;
 }
 .timeline .timeline-item .timeline-icon {
@@ -458,18 +432,6 @@ h4 {
 
 /*Social Media Icons*/
 
-.footer-social-icons {
-  position: absolute;
-  width: 300px;
-  height: auto;
-  text-align: center;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  margin: auto;
-
-}
-
 .footer-social-icons > h4{
   font-size: 1.2em;
   font-weight:  bolder;
@@ -594,20 +556,11 @@ ul.social-icons {
 	backface-visibility: hidden;
 }
 
-hr{
-  width: 80%; left: 0; position: relavtive; margin: 0 auto 120px auto; visibility: hidden;
-}
 
 .openBook{
   position: absolute; top: 50%; right: 5px;color: white;
 }
 
-.name-cursive{
-  font-family: 'Sacramento', cursive; margin-top:20px;font-size: 65px;
-}
-.email{
-  font-size: 22px;
-}
 #gform{
   margin-top: 30px;
 }
@@ -634,42 +587,7 @@ hr{
   	border-radius: 20px;
   	backface-visibility: hidden;
   }
-  .cover > center > h1 {
-      font-weight: bolder;
-      font-size: 2.5rem;
-      margin-bottom: 0;
-      margin-top: 10px;
-  }
-  .cover > center > h4 {
-      font-size: 0.7rem;
-  }
-  .cover > h4 {
-      font-size: 1rem;
-      margin-top: -0.5rem;
-      margin-bottom: 0.5rem;
-      margin-left: 1.1rem;
-  }
-  .cover > h2 {
-      font-size: 1.5rem;
-      margin-left: 1.1rem;
-  }
-  hr{
-     width: 80%;
-     left: 0;
-     position: relavtive;
-     margin: 0 auto 50px auto;
-     visibility: hidden;
-  }
-  .footer-social-icons {
-      position: absolute;
-      width: 300px;
-      height: auto;
-  		text-align: center;
-      bottom: 10px;
-      left: 0;
-      right: 0;
-      margin: auto;
-  }
+
   ul.social-icons {
     margin: 0 auto;
   }
@@ -687,14 +605,8 @@ hr{
     color: white;
     font-size: 9px;
   }
-  .name-cursive{
-    margin-top:10px;
-    margin-bottom: 0;
-    font-size: 25px;
-  }
-  .email{
-    font-size: 10px;
-  }
+
+
   .form-floating-label [type='text'],
   .form-floating-label [type='password'],
   .form-floating-label [type='date'],
@@ -741,10 +653,6 @@ hr{
       padding: 9px 10px 9px 10px;
   		font-size: 15px;
   }
-  h1{
-    font-size: 20px;
-    font-weight: bolder;
-  }
   .type-sidelines{
     margin-top: -5px;
     margin-bottom: 10px;
@@ -752,19 +660,6 @@ hr{
   .button-group .button {
       font-size: 0.7rem;
       margin-bottom: 10px;
-  }
-  h4{
-    font-size: 15px;
-    margin: 0;
-  }
-  h2{
-    font-size: 18px;
-    font-weight: bolder;
-  }
-  h3{
-    font-size: 16px;
-     margin-bottom: 2px;
-
   }
   .timeline .timeline-item .timeline-icon{
     width: 15px;
@@ -784,4 +679,24 @@ hr{
     margin-top: 80px;
     font-size: 30px;
   }
+}
+
+.cover-title{
+  width: 100%;
+  height: 20%;
+  position: relative;
+  padding-top: 2%;
+}
+.cover-aboutme{
+  width: 100%;
+  height: 70%;
+  position: relative;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 7%;
+}
+.footer-social-icons{
+  width: 100%;
+  height: 10%;
+  position: relative;
 }
