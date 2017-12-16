@@ -24,7 +24,6 @@ var animateBackgroundFunction;
     function initHeader() {
       width = window.innerWidth;
       height = window.innerHeight;
-      console.log(width, height);
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('background');
