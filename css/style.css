@@ -700,3 +700,9 @@ ul.social-icons {
   height: 10%;
   position: relative;
 }
+
+@media (min-width:320px)  {
+.book{
+  height: 35%;
+}
+}
