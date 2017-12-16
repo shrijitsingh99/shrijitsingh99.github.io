@@ -1,8 +1,20 @@
 var animateBackground;
 var animateBackgroundFunction;
+
 (function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+
+    if (window.innerWidth > 1500){
+       var nNearestPoints = 5
+       var circleRadius = 0
+       var activeRadius = 4
+    }
+    else if (window.innerWidth <= 1500) {
+      var nNearestPoints = 3
+      var circleRadius = 0
+      var activeRadius = 0.8
+    }
 
     // Main
     initHeader();
@@ -12,6 +24,7 @@ var animateBackgroundFunction;
     function initHeader() {
       width = window.innerWidth;
       height = window.innerHeight;
+      console.log(width, height);
         target = {x: width/2, y: height/2};
 
         largeHeader = document.getElementById('background');
@@ -41,7 +54,7 @@ var animateBackgroundFunction;
                 var p2 = points[j]
                 if(!(p1 == p2)) {
                     var placed = false;
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < nNearestPoints; k++) {
                         if(!placed) {
                             if(closest[k] == undefined) {
                                 closest[k] = p2;
@@ -50,7 +63,7 @@ var animateBackgroundFunction;
                         }
                     }
 
-                    for(var k = 0; k < 5; k++) {
+                    for(var k = 0; k < nNearestPoints; k++) {
                         if(!placed) {
                             if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
                                 closest[k] = p2;
@@ -65,7 +78,7 @@ var animateBackgroundFunction;
 
         // assign a circle to each point
         for(var i in points) {
-            var c = new Circle(points[i], 2+Math.random()*7, 'rgba(255,255,255,0.3)');
+            var c = new Circle(points[i], 2+Math.random()*circleRadius, 'rgba(255,255,255,0.3)');
             points[i].circle = c;
         }
     }
@@ -122,13 +135,13 @@ var animateBackgroundFunction;
             ctx.clearRect(0,0,width,height);
             for(var i in points) {
                 // detect points in range
-                if(Math.abs(getDistance(target, points[i])) < 4000) {
+                if(Math.abs(getDistance(target, points[i])) < 1000*activeRadius) {
                     points[i].active = 1;
                     points[i].circle.active = 1;
-                } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+                } else if(Math.abs(getDistance(target, points[i])) < 5000*activeRadius) {
                     points[i].active = 1;
                     points[i].circle.active = 1;
-                } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+                } else if(Math.abs(getDistance(target, points[i])) < 10000*activeRadius) {
                     points[i].active = 1;
                     points[i].circle.active = 1;
                 } else {
@@ -149,25 +162,25 @@ var animateBackgroundFunction;
 
     $("#openBook").on("click", function() {
 cancelAnimationFrame(animateBackground);
-for(var i in points) {
-    // detect points in range
-    if(Math.abs(getDistance(target, points[i])) < 4000) {
-        points[i].active = 1;
-        points[i].circle.active = 1;
-    } else if(Math.abs(getDistance(target, points[i])) < 20000) {
-        points[i].active = 1;
-        points[i].circle.active = 1;
-    } else if(Math.abs(getDistance(target, points[i])) < 40000) {
-        points[i].active = 1;
-        points[i].circle.active = 1;
-    } else {
-        points[i].active = 0.3;
-        points[i].circle.active = 1;
-    }
-
-    drawLines(points[i]);
-    points[i].circle.draw();
-}
+// for(var i in points) {
+//     // detect points in range
+//     if(Math.abs(getDistance(target, points[i])) < 4000) {
+//         points[i].active = 1;
+//         points[i].circle.active = 1;
+//     } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+//         points[i].active = 1;
+//         points[i].circle.active = 1;
+//     } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+//         points[i].active = 1;
+//         points[i].circle.active = 1;
+//     } else {
+//         points[i].active = 0.3;
+//         points[i].circle.active = 1;
+//     }
+//
+//     drawLines(points[i]);
+//     points[i].circle.draw();
+// }
 });
 
 $("#closeBook").on("click", function() {
@@ -192,7 +205,7 @@ $("#closeBook").on("click", function() {
  drawLines(points[i]);
  points[i].circle.draw();
  }
-}, 1200);
+}, 3000);
 });
 
     function shiftPoint(p) {

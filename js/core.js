@@ -5,6 +5,7 @@ function clickedOpenBook() {
     cancelAnimationFrame(animateCoverBackground)
     timer = setInterval(openBook, 1)
     function openBook() {
+      isBookOpen = 1
         if (n <= 270) {
             if (n < 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
@@ -34,8 +35,9 @@ function clickedOpenBook() {
 
 function clickedCloseBook() {
     var n = 270;
-    timer = setInterval(closeBook, 1)
+    timer = setInterval(closeBook, 15)
     function closeBook() {
+      isBookOpen = 0
         if (n <= 270) {
             if (n <= 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
@@ -60,11 +62,11 @@ function clickedCloseBook() {
             }
             if (n == 0) {
                 clearInterval(timer);
+                requestAnimationFrame(animateCoverBackgroundFunction);
             }
-            --n;
+            n = n - 3;
         }
     }
-    requestAnimationFrame(animateCoverBackgroundFunction);
 
 }
 

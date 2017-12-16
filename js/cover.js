@@ -4,6 +4,15 @@ var animateCoverBackgroundFunction;
     var width, height, coverBackground, canvas, ctx, triangles, target, animateHeader = true;
     var colors = ['72,35,68', '43,81,102', '66,152,103', '250,178,67', '224,33,48'];
 
+    if (window.innerWidth > 1500){
+      var triangleSize = 5;
+      tweenRadiusFactor = 4
+    }
+    else if (window.innerWidth <= 1500) {
+      var triangleSize = 8
+      tweenRadiusFactor = 1
+    }
+
     // Main
     initHeader();
     addListeners();
@@ -43,8 +52,8 @@ var animateCoverBackgroundFunction;
 
     function tweenTriangle(tri) {
         var t = Math.random()*(2*Math.PI);
-        var x = (200+Math.random()*100)*Math.cos(t) + width*0.45;
-        var y = (200+Math.random()*100)*Math.sin(t) + height*0.5-20;
+        var x = (tweenRadiusFactor*50+Math.random()*100)*Math.cos(t) + width*0.45;
+        var y = (tweenRadiusFactor*50+Math.random()*100)*Math.sin(t) + height*0.5-20;
         var time = 4+3*Math.random();
 
         TweenLite.to(tri.pos, time, {x: x,
@@ -100,12 +109,12 @@ var animateCoverBackgroundFunction;
         function init() {
             _this.pos.x = width*0.45;
             _this.pos.y = height*0.5-20;
-            _this.coords[0].x = -10+Math.random()*width/5;
-            _this.coords[0].y = -10+Math.random()*width/5;
-            _this.coords[1].x = -10+Math.random()*width/5;
-            _this.coords[1].y = -3+Math.random()*width/5;
-            _this.coords[2].x = -10+Math.random()*width/5;
-            _this.coords[2].y = -10+Math.random()*width/5;
+            _this.coords[0].x = -10+Math.random()*width/triangleSize;
+            _this.coords[0].y = -10+Math.random()*width/triangleSize;
+            _this.coords[1].x = -10+Math.random()*width/triangleSize;
+            _this.coords[1].y = -3+Math.random()*width/triangleSize;
+            _this.coords[2].x = -10+Math.random()*width/triangleSize;
+            _this.coords[2].y = -10+Math.random()*width/triangleSize;
             _this.scale = 1.1+Math.random()*0.3;
             _this.color = colors[Math.floor(Math.random()*colors.length)];
             setTimeout(function() { _this.alpha = 0.9; }, 10);
