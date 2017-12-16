@@ -1,9 +1,9 @@
 /*Opening and closing of book*/
 
 function clickedOpenBook() {
-    var n = -20;
+    var n = -50;
     cancelAnimationFrame(animateCoverBackground)
-    timer = setInterval(openBook, 1)
+    timer = setInterval(openBook, 10)
     function openBook() {
       isBookOpen = 1
         if (n <= 270) {
@@ -26,7 +26,7 @@ function clickedOpenBook() {
                 document.getElementById('contact').style.transform = "rotateY(" + (n - 270) + "deg)";
                 document.getElementById('contact').style.transformOrigin = "0";
             }
-            ++n;
+            n = n + 5;
         } else {
             clearInterval(timer);
         }
@@ -35,7 +35,7 @@ function clickedOpenBook() {
 
 function clickedCloseBook() {
     var n = 270;
-    timer = setInterval(closeBook, 15)
+    timer = setInterval(closeBook, 10)
     function closeBook() {
       isBookOpen = 0
         if (n <= 270) {
@@ -61,10 +61,10 @@ function clickedCloseBook() {
                 document.getElementById('cover-background').style.visibility = "visible";
             }
             if (n == 0) {
-                clearInterval(timer);
                 requestAnimationFrame(animateCoverBackgroundFunction);
+                clearInterval(timer);
             }
-            n = n - 3;
+            n = n - 5;
         }
     }
 
