@@ -161,7 +161,7 @@ var animateBackgroundFunction;
     animateBackgroundFunction = animate.bind(null);
 
     $("#openBook").on("click", function() {
-cancelAnimationFrame(animateBackground);
+ cancelAnimationFrame(animateBackground);
 // for(var i in points) {
 //     // detect points in range
 //     if(Math.abs(getDistance(target, points[i])) < 4000) {
@@ -205,7 +205,7 @@ $("#closeBook").on("click", function() {
  drawLines(points[i]);
  points[i].circle.draw();
  }
-}, 3000);
+}, 1500);
 });
 
     function shiftPoint(p) {
