@@ -46,14 +46,14 @@ h4 {
 .container {
 		position: relative;
 		margin: 0 auto;
-    width: 700px;
+    width: 30%;
     height: 100%;
 		display: inline-block;
 }
 .book {
     position: absolute;
     width: 100%;
-    height: 1000px;
+    height: 80%;
     border-radius: 10px;
     top: 0;
     bottom: 0;
@@ -622,15 +622,6 @@ hr{
 }
 
 @media only screen and (max-width: 1500px) {
-  .container {
-      width: 325px;
-      height: 100%;
-  }
-  .book {
-      width: 100%;
-      height: 500px;
-      border-radius: 10px;
-  }
   .cover-background {
   	position: absolute;
   	width: 100%;

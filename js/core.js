@@ -1,13 +1,13 @@
 /*Opening and closing of book*/
 
 function clickedOpenBook() {
-    var n = 1;
+    var n = -20;
     cancelAnimationFrame(animateCoverBackground)
     timer = setInterval(openBook, 1)
     function openBook() {
       isBookOpen = 1
         if (n <= 270) {
-            if (n < 180) {
+            if (n >= 0 && n < 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
                 document.getElementById('cover-background').style.transform = "rotateY(" + (-n) + "deg)";
                 document.getElementById('cover').style.transformOrigin = "0";
