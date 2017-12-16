@@ -76,7 +76,7 @@
                           </li>
                         </ul>
                     </div>
-                    <a id="openBook" class="openBook"onclick="clickedOpenBook()">
+                    <a id="openBook" class="openBook" onclick="clickedOpenBook()">
               				<span class="fa-stack fa-2x">
                 				<i class="fa fa-circle-thin fa-stack-2x"></i>
                 				<i class="fa fa-angle-right fa-stack-1x"></i>
@@ -205,6 +205,8 @@
 <script>
     $(document).foundation();
 
+    var isBookOpen = 0;
+
 /*Pause animation if browser window is not in focus*/
 
 //Main visibility API function to check if current tab is active or not
@@ -240,8 +242,10 @@ if (notIE && !isChromium) {
 
         // Tween resume() code goes here
         setTimeout(function(){
-					requestAnimationFrame(animateBackgroundFunction);
-					requestAnimationFrame(animateCoverBackgroundFunction);
+          if (isBookOpen == 0){
+            requestAnimationFrame(animateBackgroundFunction);
+  					requestAnimationFrame(animateCoverBackgroundFunction);
+          }
         },300);
 
     }).on("focusout", function () {
@@ -261,8 +265,10 @@ if (notIE && !isChromium) {
 
             // Tween resume() code goes here
 						setTimeout(function(){
-							requestAnimationFrame(animateBackgroundFunction);
-							requestAnimationFrame(animateCoverBackgroundFunction);
+              if (isBookOpen == 0){
+                requestAnimationFrame(animateBackgroundFunction);
+      					requestAnimationFrame(animateCoverBackgroundFunction);
+              }
 						},300);
 
 
