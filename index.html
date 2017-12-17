@@ -22,6 +22,16 @@
         </canvas>
         </div>
         <div class="container">
+          <div id="top-bar" class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li><a href="#" onclick="clickedHome()">Home</a></li>
+      <li><a href="#" onclick="clickedPortfolio()">Portfolio</a></li>
+      <li><a href="#" onclick="clickedResume()">Resume</a></li>
+      <li><a href="#" onclick="clickedContact()">Contact Me</a></li>
+    </ul>
+  </div>
+</div>
             <div id="cover-background" class="cover-background">
                 <canvas id="cover-canvas">
           </canvas>
@@ -99,7 +109,7 @@
                   <i class="bitIcon-swift bitIcon" style="color: white; font-size: 5vw"></i>
                 </div>
                 </div>
-                <div class="portfolio">
+                <div id="portfolio" class="portfolio">
                     <h3 class="type-sidelines" style="font-weight: bold;margin-bottom: 10px;">
                         <span>Portfolio</span>
                     </h3>
@@ -222,11 +232,41 @@
       jQuery("h6").fitText(3);
       jQuery("p").fitText(2.5);
 
-    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
+    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1, isMobile = 0
+
+    if (window.innerWidth <=601) {
+      isMobile = 1;
+      document.getElementById("top-bar").style.display = "none"
+      document.getElementById("book").style.height = "100%"
+      document.getElementById("book").style.top = "0"
+      document.getElementById("closeBook").style.display = "none"
+    }
+
+
+function clickedPortfolio(){
+  document.getElementById("portfolio").style.display = "block"
+  document.getElementById("contact").style.display = "none"
+  document.getElementById("resume").style.display = "none";
+}
+function clickedResume(){
+  document.getElementById("resume").style.display = "block"
+  document.getElementById("contact").style.display = "none"
+  document.getElementById("portfolio").style.display = "none";
+}
+function clickedContact(){
+  document.getElementById("contact").style.display = "block"
+  document.getElementById("portfolio").style.display = "none"
+  document.getElementById("resume").style.display = "none";
+}
+function clickedHome(){
+  clickedCloseBook()
+}
+
 
 /*Pause animation if browser window is not in focus*/
 
 // Main visibility API function to check if current tab is active or not
+if(isMobile == 0){
 var vis = (function(){
     var stateKey,
         eventKey,
@@ -322,6 +362,7 @@ if (notIE && !isChromium) {
 
         });
     }
+}
 }
 </script>
 

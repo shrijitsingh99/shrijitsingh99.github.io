@@ -1,6 +1,6 @@
 var animateBackground;
 var animateBackgroundFunction;
-
+if(isMobile == 0){
 (function() {
 
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
@@ -257,3 +257,4 @@ $("#closeBook").on("click", function() {
     }
 
 })();
+}

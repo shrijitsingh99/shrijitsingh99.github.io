@@ -459,7 +459,6 @@ h6 {
 }
 
 ul.social-icons {
-    /*margin-top: 0;*/
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -594,7 +593,7 @@ ul.social-icons {
   font-size: 70px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1600px) {
 
   .social-icons > li > a > i.fa{
     font-size: 1vw;
@@ -667,4 +666,59 @@ ul.social-icons {
     left: -2px;
     top: 6px;
   }
+}
+.top-bar{
+  display: none;
+}
+
+
+@media only screen and (max-width: 601px) {
+  .social-icons > li > a > i.fa{
+    font-size: 3vw;
+    padding: 1.5vw 1.55vw;
+  }
+  ul.social-icons {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin: 0 0 2% -20%;
+  }
+  .container{
+    width: 100%;
+  }
+  .top-bar{
+    display: block;
+    padding: 0;
+  }
+  .left-page {
+      position: absolute;
+      left: 0;
+  }
+  .right-page {
+      position: absolute;
+      right: 0;
+  }
+  .resume {
+  	  z-index: 1;
+      transform: rotateY(0deg);
+      transform-origin: "100%";
+      border-radius: 0;
+      box-shadow: 0 0 0 0;
+  }
+  .portfolio {
+  	z-index: 1;
+    overflow: auto;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+  }
+  .contact {
+  	z-index: 1;
+  	transform: rotateY(0deg);
+  	transform-origin: "0";
+  	text-align: center;
+    overflow: auto;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+  }
+
 }

@@ -1,6 +1,18 @@
 /*Opening and closing of book*/
 
 function clickedOpenBook() {
+  if(isMobile == 1){
+  clickedResume()
+  document.getElementById("top-bar").style.display = "block"
+  document.getElementById("book").style.height = "95%"
+  document.getElementById("book").style.top = "5%"
+  document.getElementById("cover").style.display = "none"
+  document.getElementById("cover-background").style.display = "none"
+  document.getElementById("hidden-cover").style.display = "none"
+  cancelAnimationFrame(animateCoverBackground)
+  isCoverAnimating = 0
+}
+else{
     var n = -50;
     cancelAnimationFrame(animateCoverBackground)
     isCoverAnimating = 0
@@ -34,9 +46,21 @@ function clickedOpenBook() {
             isBookOpen = 1
         }
     }
+  }
 }
 
 function clickedCloseBook() {
+  if(isMobile == 1){
+  document.getElementById("top-bar").style.display = "none"
+  document.getElementById("book").style.height = "100%"
+  document.getElementById("book").style.top = "0"
+  document.getElementById("cover").style.display = "block"
+  document.getElementById("cover-background").style.display = "block"
+  document.getElementById("hidden-cover").style.display = "block"
+  requestAnimationFrame(animateCoverBackgroundFunction);
+  isCoverAnimating = 1
+}
+else{
     var n = 270;
     timer = setInterval(closeBook, 10)
     function closeBook() {
@@ -73,6 +97,7 @@ function clickedCloseBook() {
             n = n - 5;
         }
     }
+  }
 
 }
 
