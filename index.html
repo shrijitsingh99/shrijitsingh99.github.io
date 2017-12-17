@@ -231,12 +231,22 @@ if (window.innerWidth <= 601) {
 <script>
     $(document).foundation();
 
+    if(isMobile == 0){
       jQuery("h2").fitText(1);
       jQuery("h3").fitText(1.5);
       jQuery("h4").fitText(2);
       jQuery("h5").fitText(2.5);
       jQuery("h6").fitText(3);
       jQuery("p").fitText(2.5);
+    }
+    else if (isMobile == 1) {
+      jQuery("h2").fitText(1);
+      jQuery("h3").fitText(1.5);
+      jQuery("h4").fitText(1.75);
+      jQuery("h5").fitText(2.25);
+      jQuery("h6").fitText(2.75);
+      jQuery("p").fitText(2.25);
+    }
 
     var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
     console.log("Width: ", screen.width)
