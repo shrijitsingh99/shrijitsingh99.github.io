@@ -457,8 +457,13 @@ h6 {
 .fa:hover {
     color: white;
 }
+
 ul.social-icons {
-    margin-top: 0 auto;
+    /*margin-top: 0;*/
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin: 0 0 2% -25%;
 }
 .social-icons li {
     vertical-align: top;
