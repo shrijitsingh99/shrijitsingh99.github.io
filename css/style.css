@@ -686,6 +686,9 @@ ul.social-icons {
   .container{
     width: 100%;
   }
+  .book{
+    width: 100%
+  }
   .top-bar{
     display: block;
     padding: 0;

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="author" content="Shrijit Singh" />
     <meta name="description" content="Shrijit Singh - Developer" />
 
@@ -210,6 +210,12 @@
         </div>
     </section>
 </body>
+<script>
+var isMobile = 0
+if (window.innerWidth <= 601) {
+  isMobile = 1
+}
+</script>
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/what-input.min.js"></script>
 <script src="js/vendor/foundation.min.js"></script>
@@ -232,10 +238,10 @@
       jQuery("h6").fitText(3);
       jQuery("p").fitText(2.5);
 
-    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1, isMobile = 0
+    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
+    console.log("Width: ", screen.width)
+    if (isMobile == 1) {
 
-    if (window.innerWidth <=601) {
-      isMobile = 1;
       document.getElementById("top-bar").style.display = "none"
       document.getElementById("book").style.height = "100%"
       document.getElementById("book").style.top = "0"
