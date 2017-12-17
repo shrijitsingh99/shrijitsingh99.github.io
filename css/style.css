@@ -358,7 +358,7 @@ h6 {
         left: 0;
     }
     .timeline .timeline-item .timeline-content {
-        float: right;
+        /*float: right;*/
         text-align: left;
         width: 90%;
     }
@@ -692,6 +692,10 @@ ul.social-icons {
   .top-bar{
     display: block;
     padding: 0;
+    background-color: #0d0b0b;
+  }
+  .top-bar ul{
+    background-color: #0d0b0b;
   }
   .left-page {
       position: absolute;
@@ -723,5 +727,7 @@ ul.social-icons {
     border-radius: 0;
     box-shadow: 0 0 0 0;
   }
-
+  .timeline .timeline-item .timeline-icon{
+    left: -6px;
+  }
 }

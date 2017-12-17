@@ -4,8 +4,10 @@ function clickedOpenBook() {
   if(isMobile == 1){
   clickedResume()
   document.getElementById("top-bar").style.display = "block"
-  document.getElementById("book").style.height = "95%"
-  document.getElementById("book").style.top = "5%"
+  document.getElementById("book").style.height = "92%"
+  document.getElementById("book").style.top = "8%"
+  document.getElementById("top-bar").style.height = "8%"
+  document.getElementById("top-bar").style.padding = "2%"
   document.getElementById("cover").style.display = "none"
   document.getElementById("cover-background").style.display = "none"
   document.getElementById("hidden-cover").style.display = "none"
