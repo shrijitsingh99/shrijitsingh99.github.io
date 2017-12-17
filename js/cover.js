@@ -21,6 +21,7 @@ var animateCoverBackgroundFunction;
     function initHeader() {
         width = document.getElementById('cover').clientWidth;
         height = document.getElementById('cover').clientHeight;
+        console.log(height);
         target = {x: 0, y: height};
 
         coverBackground = document.getElementById('cover-background');

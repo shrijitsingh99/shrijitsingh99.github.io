@@ -451,10 +451,6 @@ h6 {
 
 /*Social Media Icons*/
 
-.footer-social-icons > h4{
-  font-size: 1.2em;
-  font-weight:  bolder;
-}
 .fa {
     border-radius: 100px;
 }
@@ -596,7 +592,7 @@ ul.social-icons {
 @media only screen and (max-width: 1500px) {
 
   .social-icons > li > a > i.fa{
-    font-size: 15px;
+    font-size: 100%;
     padding: 7px 8px;
   }
   .footer-social-icons > h4{
@@ -665,11 +661,5 @@ ul.social-icons {
     height: 15px;
     left: -2px;
     top: 6px;
-  }
-}
-
-@media (max-width:481px)  {
-  .book{
-    height: 40%;
   }
 }

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 		<meta name="author" content="Shrijit Singh" />
     <meta name="description" content="Shrijit Singh - Developer" />
 
@@ -25,7 +26,7 @@
                 <canvas id="cover-canvas">
           </canvas>
             </div>
-            <div class="book">
+            <div class="book" id="book">
                 <div id="cover" class="cover">
                     <div class="cover-title">
                         <h2 style="font-weight: bolder;">Shrijit Singh</h2>
@@ -42,7 +43,7 @@
                     <h5>If you can believe it, you can achieve it</h5>
                   </div>
                     <div class="footer-social-icons">
-                        <h4>Follow me on</h4>
+                        <h6 style="font-weight:  bolder;">Follow me on</h6>
                         <ul class="social-icons">
                           <li>
                             <a href="https://github.com/shrijitsingh99" class="social-icon">
@@ -85,17 +86,17 @@
                 </div>
                 <div id="hidden-cover" class="hidden-cover">
                   <div style="position: absolute; top: 100%; height: auto; margin-top: -100%;">
-                  <i class="bitIcon-c" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-cpp" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-cpp" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-css3" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-html5" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-js" style="color: white; font-size: 80px"></i>
-                  <!-- <i class="bitIcon-mysql" style="color: white; font-size: 80px"></i> -->
-                  <i class="bitIcon-objc" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-php" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-python" style="color: white; font-size: 80px"></i>
-                  <i class="bitIcon-swift" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-c bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-cpp bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-cpp bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-css3 bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-html5 bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-js bitIcon" style="color: white; font-size: 80px"></i>
+                  <!-- <i class="bitIcon-mysql bitIcon" style="color: white; font-size: 80px"></i> -->
+                  <i class="bitIcon-objc bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-php bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-python bitIcon" style="color: white; font-size: 80px"></i>
+                  <i class="bitIcon-swift bitIcon" style="color: white; font-size: 80px"></i>
                 </div>
                 </div>
                 <div class="portfolio">
@@ -130,8 +131,8 @@
                     </p>
                     <br>
                     <div class="header-border">
-                        <h5 style="font-weight: bold;">Education
-                        </h5>
+                        <h4 style="font-weight: bold;">Education
+                        </h4>
                     </div>
                     <div class="timeline">
                       <div class="timeline-item">
@@ -139,7 +140,7 @@
                           </div>
                           <div class="timeline-content">
                               <p class="timeline-content-date">
-                                  <h6 style="font-weight: bolder;">2017 - 2021</h6>
+                                  <h4 style="font-weight: bolder;">2017 - 2021</h4>
                                   <p style="font-weight: bold;">
                                       Manipal Institue of Technology
                                   </p>
@@ -210,8 +211,16 @@
 <script src="js/cover.js"></script>
 <script src="js/form-submission-handler.js"></script>
 <script src="js/core.js"></script>
+<script src="js/jquery.fittext.js"></script>
 <script>
     $(document).foundation();
+
+      jQuery("h2").fitText(1);
+      jQuery("h3").fitText(1.5);
+      jQuery("h4").fitText(2);
+      jQuery("h5").fitText(2.5);
+      jQuery("h6").fitText(3);
+      jQuery("p").fitText(2.5);
 
     var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
 
