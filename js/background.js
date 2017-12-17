@@ -161,6 +161,7 @@ var animateBackgroundFunction;
 
     $("#openBook").on("click", function() {
  cancelAnimationFrame(animateBackground);
+ isBackgroundAnimating = 0
 // for(var i in points) {
 //     // detect points in range
 //     if(Math.abs(getDistance(target, points[i])) < 4000) {
@@ -183,28 +184,32 @@ var animateBackgroundFunction;
 });
 
 $("#closeBook").on("click", function() {
-  setTimeout(function(){
-  requestAnimationFrame(animate);
- for(var i in points) {
- // detect points in range
- if(Math.abs(getDistance(target, points[i])) < 4000) {
-     points[i].active = 1;
-     points[i].circle.active = 1;
- } else if(Math.abs(getDistance(target, points[i])) < 20000) {
-     points[i].active = 1;
-     points[i].circle.active = 1;
- } else if(Math.abs(getDistance(target, points[i])) < 40000) {
-     points[i].active = 1;
-     points[i].circle.active = 1;
- } else {
-     points[i].active = 0.2;
-     points[i].circle.active = 0.4;
- }
-
- drawLines(points[i]);
- points[i].circle.draw();
- }
-}, 1500);
+  var backgroundAnimationTimer = setInterval(function(){
+    if(isBookOpen == 0){
+      clearInterval(backgroundAnimationTimer)
+      requestAnimationFrame(animate);
+      isBackgroundAnimating = 1
+       // for(var i in points) {
+       // // detect points in range
+       // if(Math.abs(getDistance(target, points[i])) < 4000) {
+       //     points[i].active = 1;
+       //     points[i].circle.active = 1;
+       // } else if(Math.abs(getDistance(target, points[i])) < 20000) {
+       //     points[i].active = 1;
+       //     points[i].circle.active = 1;
+       // } else if(Math.abs(getDistance(target, points[i])) < 40000) {
+       //     points[i].active = 1;
+       //     points[i].circle.active = 1;
+       // } else {
+       //     points[i].active = 0.2;
+       //     points[i].circle.active = 0.4;
+       // }
+       //
+       // drawLines(points[i]);
+       // points[i].circle.draw();
+       // }
+     }
+}, 100);
 });
 
     function shiftPoint(p) {

@@ -3,9 +3,10 @@
 function clickedOpenBook() {
     var n = -50;
     cancelAnimationFrame(animateCoverBackground)
+    isCoverAnimating = 0
     timer = setInterval(openBook, 10)
     function openBook() {
-      isBookOpen = 1
+      isBookTurning = 1
         if (n <= 270) {
             if (n >= 0 && n < 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
@@ -29,6 +30,8 @@ function clickedOpenBook() {
             n = n + 5;
         } else {
             clearInterval(timer);
+            isBookTurning = 0
+            isBookOpen = 1
         }
     }
 }
@@ -37,7 +40,7 @@ function clickedCloseBook() {
     var n = 270;
     timer = setInterval(closeBook, 10)
     function closeBook() {
-      isBookOpen = 0
+      isBookTurning = 1
         if (n <= 270) {
             if (n <= 180) {
                 document.getElementById('cover').style.transform = "rotateY(" + (-n) + "deg)";
@@ -62,7 +65,10 @@ function clickedCloseBook() {
             }
             if (n == 0) {
                 requestAnimationFrame(animateCoverBackgroundFunction);
+                isCoverAnimating = 1
                 clearInterval(timer);
+                isBookOpen = 0
+                isBookTurning = 0
             }
             n = n - 5;
         }

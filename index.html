@@ -213,11 +213,11 @@
 <script>
     $(document).foundation();
 
-    var isBookOpen = 0;
+    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
 
 /*Pause animation if browser window is not in focus*/
 
-//Main visibility API function to check if current tab is active or not
+// Main visibility API function to check if current tab is active or not
 var vis = (function(){
     var stateKey,
         eventKey,
@@ -257,7 +257,6 @@ if (notIE && !isChromium) {
         },300);
 
     }).on("focusout", function () {
-
         // Tween pause() code goes here
 				cancelAnimationFrame(animateBackground);
 				cancelAnimationFrame(animateCoverBackground)
@@ -270,15 +269,15 @@ if (notIE && !isChromium) {
 
         // Bind focus event
         window.addEventListener("focus", function (event) {
-
             // Tween resume() code goes here
-						setTimeout(function(){
-              if (isBookOpen == 0){
+          if (isBookOpen == 0 && isCoverAnimating == 1 && isBackgroundAnimating == 1){
+						// setTimeout(function(){
                 requestAnimationFrame(animateBackgroundFunction);
       					requestAnimationFrame(animateCoverBackgroundFunction);
-              }
-						},300);
+                window.removeEventListener("focus", function(event){}, false);
 
+						// },0);
+          }
 
         }, false);
 
