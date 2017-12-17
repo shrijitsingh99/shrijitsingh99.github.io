@@ -734,4 +734,7 @@ ul.social-icons {
   .timeline .timeline-item .timeline-icon{
     left: -6px;
   }
+  .timeline{
+    margin-left: 10px;
+  }
 }
