@@ -693,9 +693,13 @@ ul.social-icons {
     display: block;
     padding: 0;
     background-color: #0d0b0b;
+    width: 100%;
   }
   .top-bar ul{
     background-color: #0d0b0b;
+  }
+  .menu li{
+    width: 25%;
   }
   .left-page {
       position: absolute;
