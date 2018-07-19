@@ -2,384 +2,213 @@
 <html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="Shrijit Singh" />
-    <meta name="description" content="Shrijit Singh - Developer" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Shrijit Singh" />
+  <meta name="description" content="Shrijit Singh - Developer" />
 
-		<link rel="stylesheet" type="text/css" href="css/simplebar.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bitIcon.css" />
-    <link rel="stylesheet" href="css/foundation.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bitIcon.css" />
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/simplebar.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
-    <section class="main">
-        <div id="background" class="background">
-            <canvas id="background-canvas">
-        </canvas>
-        </div>
-        <div class="container">
-          <div id="top-bar" class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li><a onclick="clickedHome()" style="color: white;">Home</a></li>
-      <li><a onclick="clickedPortfolio()" style="color: white;">Portfolio</a></li>
-      <li><a onclick="clickedResume()" style="color: white;">Resume</a></li>
-      <li><a onclick="clickedContact()" style="color: white;">Contact</a></li>
-    </ul>
-  </div>
-</div>
-            <div id="cover-background" class="cover-background">
-                <canvas id="cover-canvas">
+  <section class="main">
+    <div class="container">
+      <div id="top-bar" class="top-bar hide-for-large">
+        <ul class="menu">
+          <li id="menu-home"><a onclick="clickedHome()"><i class="fa fa-arrow-left fa-lg"></i></a></li>
+          <li id="menu-portfolio"><a onclick="clickedPortfolio()"><i class="fa fa-briefcase fa-lg"></i></a></li>
+          <li id="menu-resume"><a onclick="clickedResume()"><i class="fa fa-user fa-lg"></i></a></li>
+          <li id="menu-contact"><a onclick="clickedContact()"><i class="fa fa-envelope fa-lg"></i></a></li>
+        </ul>
+      </div>
+      <div id="cover-background" class="cover-background">
+        <canvas id="cover-canvas">
           </canvas>
+      </div>
+      <div class="book" id="book">
+        <div id="cover" class="cover grid-y">
+
+          <div class="cell large-2 medium-2 small-2">
+            <div class="cover-title">
+              <h1 style="font-weight: 900;">Shrijit Singh</h1>
+              <h6>Computer Science Undergraduate</h6>
             </div>
-            <div class="book" id="book">
-                <div id="cover" class="cover">
-                    <div class="cover-title">
-                        <h2 style="font-weight: bolder;">Shrijit Singh</h2>
-                        <h6>Aspiring Software Developer & Researcher</h6>
-                    </div>
-                    <div class="cover-aboutme">
-                    <h3 style="font-weight: bolder;">I Live In</h3>
-                    <h5>India</h5>
-                    <h3 style="font-weight: bolder;">I Enjoy</h3>
-                    <h5>Solving Problems</h5>
-                    <h3 style="font-weight: bolder;">I Like</h3>
-                    <h5>Playing Various Sports</h5>
-                    <h3 style="font-weight: bolder;">My Motto</h3>
-                    <h5>If you can believe it, you can achieve it</h5>
-                  </div>
-                    <div class="footer-social-icons">
-                        <h6 style="font-weight:  bolder; margin-bottom: 0;">Follow me on</h6>
-                        <ul class="social-icons">
-                          <li>
-                            <a href="https://github.com/shrijitsingh99" class="social-icon">
-                    					<i class="fa fa-github"></i>
-                  					</a>
-                          </li>
-                          <li>
-                            <a href="https://www.facebook.com/shrijitsingh99" class="social-icon">
-                    					<i class="fa fa-facebook"></i>
-                  					</a>
-                          </li>
-                          <li>
-                            <a href="https://twitter.com/shrijitsingh" class="social-icon">
-                    					<i class="fa fa-twitter"></i>
-                  					</a>
-                          </li>
-                          <li>
-                          	<a href="https://www.instagram.com/shrijitsingh99/" class="social-icon">
-                    					<i class="fa fa-instagram"></i>
-                  					</a>
-                          </li>
-                          <li>
-                            <a href="https://www.linkedin.com/in/shrijit-singh-81b86a145/" class="social-icon">
-                    					<i class="fa fa-linkedin"></i>
-                  					</a>
-                          </li>
-                          <li>
-                            <a href="https://plus.google.com/+ShrijitSingh99" class="social-icon">
-                    					<i class="fa fa-google-plus"></i>
-                  					</a>
-                          </li>
-                        </ul>
-                    </div>
-                    <a id="openBook" class="openBook" onclick="clickedOpenBook()">
-              				<span class="fa-stack fa-2x">
-                				<i class="fa fa-circle-thin fa-stack-2x"></i>
-                				<i class="fa fa-angle-right fa-stack-1x"></i>
-              				</span>
-            				</a>
-                </div>
-                <div id="hidden-cover" class="hidden-cover">
-                  <div style="position: absolute; top: 100%; height: auto; margin-top: -100%;">
-                  <i class="bitIcon-c bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-cpp bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-cpp bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-css3 bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-html5 bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-js bitIcon" style="color: white; font-size: 5vw"></i>
-                  <!-- <i class="bitIcon-mysql bitIcon" style="color: white; font-size: 5vw"></i> -->
-                  <i class="bitIcon-objc bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-php bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-python bitIcon" style="color: white; font-size: 5vw"></i>
-                  <i class="bitIcon-swift bitIcon" style="color: white; font-size: 5vw"></i>
-                </div>
-                </div>
-                <div id="portfolio" class="portfolio">
-                    <h3 class="type-sidelines" style="font-weight: bold;margin-bottom: 10px;">
+          </div>
+
+          <div class="cell large-8 medium-8 small-8">
+            <div class="grid-x cover-content">
+              <div class="cell large-10 medium-10 small-10"></div>
+              <div class="cell large-2 medium-2 small-2 align-self-middle ">
+                <a id="openBook" class="openBook" onclick="clickedOpenBook()">
+                                <i class="fa fa-angle-right fa-2x float-right" style="color: #2a2a2a;"></i>
+                            </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cell large-2 medium-2 small-2 footer-social-icons" style="padding-top:2rem;">
+            <h6>Follow me on</h6>
+            <ul class="social-icons">
+              <li>
+                <a href="https://github.com/shrijitsingh99" class="social-icon">
+                      					<i class="fa fa-github"></i>
+                    					</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/shrijitsingh99" class="social-icon">
+                      					<i class="fa fa-facebook"></i>
+                    					</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/shrijitsingh" class="social-icon">
+                      					<i class="fa fa-twitter"></i>
+                    					</a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/shrijitsingh99/" class="social-icon">
+                      					<i class="fa fa-instagram"></i>
+                    					</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/shrijit-singh-81b86a145/" class="social-icon">
+                      					<i class="fa fa-linkedin"></i>
+                    					</a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/+ShrijitSingh99" class="social-icon">
+                      					<i class="fa fa-google-plus"></i>
+                    					</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="hidden-cover" class="hidden-cover">
+          <div class="bitIcon-container">
+            <i class="bitIcon-c bitIcon"></i>
+            <i class="bitIcon-cpp bitIcon" ></i>
+            <i class="bitIcon-objc bitIcon"></i>
+            <i class="bitIcon-css3 bitIcon"></i>
+            <i class="bitIcon-html5 bitIcon"></i>
+            <i class="bitIcon-js bitIcon"></i>
+            <i class="bitIcon-python bitIcon"></i>
+            <i class="bitIcon-mysql bitIcon"></i>
+          </div>
+        </div>
+        <div id="portfolio" data-animate="fade-in fade-out" class="portfolio">
+
+          <h3 class="type-sidelines" style="font-weight: bold;margin-bottom: 10px;">
                         <span>Portfolio</span>
                     </h3>
-                    <section class="filter-simple">
-                        <div class="button-group round">
-                            <button class="button hollow filter-simple-button is-active" data-filter="all">All</button>
-                            <button class="button hollow filter-simple-button" data-filter="ai">AI</button>
-                            <button class="button hollow filter-simple-button" data-filter="software">Software</button>
-                            <button class="button hollow filter-simple-button" data-filter="web">Web</button>
-                        </div>
-                        <div class="row small-up-2 medium-up-3 large-up-4">
-                  	<div class="column column-block filter-simple-item ai">
-														<img src="" alt="" />
-													</div>
-													<div class="column column-block filter-simple-item software">
-														<img src="" alt="" />
-													</div>
-													<div class="column column-block filter-simple-item web">
-														<img src="" alt="" />
-													</div>
-                        </div>
-                    </section>
-                </div>
-                <div data-simplebar id="resume" class="resume right-page">
-                    <h3 class="type-sidelines" style="font-weight: bold;margin-bottom: 10px;">
+          <section class="filter-simple">
+            <div class="button-group round">
+              <button class="button hollow filter-simple-button is-active" data-filter="all">All</button>
+              <button class="button hollow filter-simple-button" data-filter="ai">AI</button>
+              <button class="button hollow filter-simple-button" data-filter="software">Software</button>
+              <button class="button hollow filter-simple-button" data-filter="web">Web</button>
+            </div>
+            <div class="row small-up-2 medium-up-3 large-up-4">
+              <div class="column column-block filter-simple-item ai">
+                <img src="" alt="" />
+              </div>
+              <div class="column column-block filter-simple-item software">
+                <img src="" alt="" />
+              </div>
+              <div class="column column-block filter-simple-item web">
+                <img src="" alt="" />
+              </div>
+            </div>
+          </section>
+        </div>
+        <div data-simplebar id="resume" class="resume right-page">
+          <h3 class="type-sidelines" style="font-weight: bold;margin-bottom: 10px;">
                         <span>Resume</span>
                     </h3>
-                    <p style="text-align: center; color: white;">I am currently a student pursuing my Bachelor's Degree in Computer Science.
-                    </p>
-                    <br>
-                    <div class="header-border">
-                        <h4 style="font-weight: bold;">Education
+          <p>I am currently a student pursuing my Bachelor's Degree in Computer Science.
+          </p>
+          <br>
+          <div class="education">
+            <h4 style="font-weight: bold;" class="type-sidelines"><span>Education</span>
                         </h4>
-                    </div>
-                    <div class="timeline">
-                      <div class="timeline-item">
-                          <div class="timeline-icon">
-                          </div>
-                          <div class="timeline-content">
-                              <p class="timeline-content-date">
-                                  <h4 style="font-weight: bolder;">2017 - 2021</h4>
-                                  <p style="font-weight: bold;">
-                                      Manipal Institue of Technology
-                                  </p>
-                                  <p>
-                                      Computer Science
-                                  </p>
-                                  <p>
-                                      (B. Tech)
-                                  </p>
-                          </div>
-                      </div>
-                    </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-icon">
                 </div>
-                <div id="contact" class="contact left-page">
-                    <a id="closeBook" style="z-index: 1;" onclick="clickedCloseBook()">
-      								<i class="fa fa-close fa-3x fa-inverse" style="position: fixed; right: 10px; top: 0; font-size: 2rem; z-index: 1;"></i>
+                <div class="timeline-content">
+                  <p class="timeline-content-date">
+                    <h5 style="font-weight: 700; margin-bottom: 0.2rem;">2017 - 2021</h5>
+                    <p style="font-weight: 700;">
+                      Manipal Institue of Technology
+                    </p>
+                    <p style="font-weight: 300;">
+                      Computer Science
+                    </p>
+                    <p>
+                      (B. Tech)
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contact" class="contact left-page">
+          <a id="closeBook" class="show-for-large" style="z-index: 5;" onclick="clickedCloseBook()">
+      								<i class="fa fa-times-circle fa-3x fa-inverse" style="color: #2a2a2a; position: fixed; right: 0.4rem; top: 0.2rem; font-size: 1.5rem; z-index: 5;"></i>
     								</a>
-                    <h3 class="type-sidelines" style="font-weight: bold; margin-bottom: 10px">
+          <h3 class="type-sidelines" style="font-weight: bold; margin-bottom: 10px">
                         <span>Contact Me</span>
                     </h3>
-                    <img src="images/profile.jpg" style="border-radius: 1000px; width: 30%; justify-content: center; margin-top: 0px;">
-                    </img>
-                    <h2 style="font-family: 'Sacramento', cursive;margin-bottom: 0;">Shrijit Singh</h2>
-                    <h6>shrijitsingh99@gmail.com</h6>
-                    <form id="gform" action="https://script.google.com/macros/s/AKfycbx4pmpzhHtyaBj9hOtHRFSe62YaAElN4H4BUPB7j7ad3A7hAiw/exec" method="POST" style="margin: 15px 0;">
-                        <div class="row">
-                            <div class="small-12 column">
-                                <div class="form-floating-label">
-                                    <input type="text" id="name" name="name" required>
-                                    <label for="name">Name</label>
-                                </div>
-                            </div>
-                            <div class="small-12 column">
-                                <div class="form-floating-label">
-                                    <input type="text" id="email" name="email">
-                                    <label for="email">Email</label>
-                                </div>
-                            </div>
-                            <div class="small-12 column">
-                                <div class="form-floating-label">
-                                    <input type="text" id="subject" name="subject">
-                                    <label for="tel">Subject</label>
-                                </div>
-                            </div>
-                            <div class="small-12 column">
-                                <div class="form-floating-label">
-                                    <textarea name="message" id="message" rows="4"></textarea>
-                                    <label for="textarea">Message</label>
-                                </div>
-                            </div>
-                            <input type="submit" class="button submit-button" value="Send">
-                            </input>
-                        </div>
-                    </form>
+          <img src="images/profile.jpg" style="border-radius: 1000px; width: 30%; justify-content: center; margin-top: 0.2rem;">
+          </img>
+          <h2 style="font-family: 'Sacramento', cursive;margin-bottom: 0; font-variant: normal;">Shrijit Singh</h2>
+          <h6 style="margin-bottom: 1.5rem;">shrijitsingh99@gmail.com</h6>
+          <form id="gform" action="https://script.google.com/macros/s/AKfycbx4pmpzhHtyaBj9hOtHRFSe62YaAElN4H4BUPB7j7ad3A7hAiw/exec" method="POST" style="margin: 15px 0;">
+            <div class="grid-x">
+              <div class="cell small-12">
+                <div class="form-floating-label">
+                  <input type="text" id="name" name="name" placeholder="Name" required>
+                  <label for="name">Name</label>
                 </div>
+              </div>
+              <div class="cell small-12">
+                <div class="form-floating-label">
+                  <input type="text" id="email" name="email" placeholder="Email">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="cell small-12">
+                <div class="form-floating-label">
+                  <input type="text" id="subject" name="subject" placeholder="Subject">
+                  <label for="tel">Subject</label>
+                </div>
+              </div>
+              <div class="cell small-12">
+                <div class="form-floating-label">
+                  <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                  <label for="textarea">Message</label>
+                </div>
+              </div>
+              <input type="submit" class="button submit-button" value="Send">
+              </input>
             </div>
+          </form>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </body>
-<script>
-var isMobile = 0
-if (window.innerWidth <= 601) {
-  isMobile = 1
-}
-</script>
-<script src="js/vendor/jquery.min.js"></script>
-<script src="js/vendor/what-input.min.js"></script>
-<script src="js/vendor/foundation.min.js"></script>
+
+<script src="js/vendor/jquery.js"></script>
 <script src="js/simplebar.min.js"></script>
 <script src="js/TweenLite.min.js"></script>
 <script src="js/EasePack.min.js"></script>
-<script src="js/rAF.js"></script>
-<script src="js/background.js"></script>
 <script src="js/cover.js"></script>
 <script src="js/form-submission-handler.js"></script>
 <script src="js/core.js"></script>
-<script src="js/jquery.fittext.js"></script>
-<script>
-    $(document).foundation();
-
-    if(isMobile == 0){
-      jQuery("h2").fitText(1);
-      jQuery("h3").fitText(1.5);
-      jQuery("h4").fitText(2);
-      jQuery("h5").fitText(2.5);
-      jQuery("h6").fitText(3);
-      jQuery("p").fitText(2.5);
-    }
-    else if (isMobile == 1) {
-      jQuery("h2").fitText(1);
-      jQuery("h3").fitText(1.5);
-      jQuery("h4").fitText(1.75);
-      jQuery("h5").fitText(2.25);
-      jQuery("h6").fitText(2.75);
-      jQuery("p").fitText(2.25);
-    }
-
-    var isBookOpen = 0, isBookTurning = 0, isBackgroundAnimating = 1, isCoverAnimating = 1
-    console.log("Width: ", screen.width)
-    if (isMobile == 1) {
-
-      document.getElementById("top-bar").style.display = "none"
-      document.getElementById("book").style.height = "100%"
-      document.getElementById("book").style.top = "0"
-      document.getElementById("closeBook").style.display = "none"
-    }
-
-
-function clickedPortfolio(){
-  document.getElementById("portfolio").style.display = "block"
-  document.getElementById("contact").style.display = "none"
-  document.getElementById("resume").style.display = "none";
-}
-function clickedResume(){
-  document.getElementById("resume").style.display = "block"
-  document.getElementById("contact").style.display = "none"
-  document.getElementById("portfolio").style.display = "none";
-}
-function clickedContact(){
-  document.getElementById("contact").style.display = "block"
-  document.getElementById("portfolio").style.display = "none"
-  document.getElementById("resume").style.display = "none";
-}
-function clickedHome(){
-  clickedCloseBook()
-}
-
-
-/*Pause animation if browser window is not in focus*/
-
-// Main visibility API function to check if current tab is active or not
-if(isMobile == 0){
-var vis = (function(){
-    var stateKey,
-        eventKey,
-        keys = {
-                hidden: "visibilitychange",
-                webkitHidden: "webkitvisibilitychange",
-                mozHidden: "mozvisibilitychange",
-                msHidden: "msvisibilitychange"
-    };
-    for (stateKey in keys) {
-        if (stateKey in document) {
-            eventKey = keys[stateKey];
-            break;
-        }
-    }
-    return function(c) {
-        if (c) document.addEventListener(eventKey, c);
-        return !document[stateKey];
-    }
-})();
-
-// Check if browser window has focus
-var notIE = (document.documentMode === undefined),
-    isChromium = window.chrome;
-
-if (notIE && !isChromium) {
-
-    // Checks for Firefox and other  NON IE Chrome versions
-    $(window).on("focusin", function () {
-
-        // Tween resume() code goes here
-        setTimeout(function(){
-          if (isBookOpen == 0){
-            requestAnimationFrame(animateBackgroundFunction);
-  					requestAnimationFrame(animateCoverBackgroundFunction);
-          }
-        },300);
-
-    }).on("focusout", function () {
-        // Tween pause() code goes here
-				cancelAnimationFrame(animateBackground);
-				cancelAnimationFrame(animateCoverBackground)
-    });
-
-} else {
-
-    // Checks for IE and Chromium versions
-    if (window.addEventListener) {
-
-        // Bind focus event
-        window.addEventListener("focus", function (event) {
-            // Tween resume() code goes here
-          if (isBookOpen == 0 && isCoverAnimating == 1 && isBackgroundAnimating == 1){
-						// setTimeout(function(){
-                requestAnimationFrame(animateBackgroundFunction);
-      					requestAnimationFrame(animateCoverBackgroundFunction);
-                window.removeEventListener("focus", function(event){}, false);
-
-						// },0);
-          }
-
-        }, false);
-
-        // Bind blur event
-        window.addEventListener("blur", function (event) {
-
-            // Tween pause() code goes here
-						cancelAnimationFrame(animateBackground);
-						cancelAnimationFrame(animateCoverBackground)
-
-
-        }, false);
-
-    } else {
-
-        // Bind focus event
-        window.attachEvent("focus", function (event) {
-
-            // Tween resume() code goes here
-            setTimeout(function(){
-							requestAnimationFrame(animateBackgroundFunction);
-						 requestAnimationFrame(animateCoverBackgroundFunction);
-            },300);
-
-        });
-
-        // Bind focus event
-        window.attachEvent("blur", function (event) {
-
-            // Tween pause() code goes here
-						cancelAnimationFrame(animateBackground);
-						cancelAnimationFrame(animateCoverBackground)
-
-        });
-    }
-}
-}
-</script>
 
 </html>
